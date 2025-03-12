@@ -16,4 +16,4 @@ CompileFlags:
     - -mno-*
 InlayHints:
   ParameterNames: Yes
-  DecucedTypes: Yes
+  DeducedTypes: Yes
