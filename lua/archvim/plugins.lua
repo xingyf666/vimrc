@@ -441,21 +441,31 @@ local plugins = {
         },
         config = function() require"archvim/config/genius" end,
     },
-    -- {
-    --     "yetone/avante.nvim",
-    --     -- run = "make",
-    --     run = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false",
-    --     requires = {
-    --         "nvim-treesitter/nvim-treesitter",
-    --         "stevearc/dressing.nvim",
-    --         "nvim-lua/plenary.nvim",
-    --         "MunifTanjim/nui.nvim",
-    --     },
-    --     config = function()
-    --         require'avante_lib'.load()
-    --         require'avante'.setup{}
-    --     end,
-    -- },
+    {
+        "yetone/avante.nvim",
+        run = "make",
+        -- run = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false",
+        requires = {
+            "nvim-treesitter/nvim-treesitter",
+            "stevearc/dressing.nvim",
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+        },
+        config = function()
+            require'avante_lib'.load()
+            require'avante'.setup{
+                provider = "deepseek",
+                vendors = {
+                    deepseek = {
+                        __inherited_from = "openai",
+                        api_key_name = "DEEPSEEK_API_KEY",
+                        endpoint = "https://api.deepseek.com",
+                        model = "deepseek-coder",
+                    },
+                },
+            }
+        end,
+    },
     -- 'madox2/vim-ai',
     -- 'Exafunction/codeium.vim',
     -- {
@@ -560,10 +570,10 @@ if archvim_predownload and archvim_predownload ~= 0 then
             --     return vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
             -- end
             local path = string.format('%s/predownload/%s', thisdir, repo)
-            if not vim.fn.isdirectory(path) then
-                return repo
-            else
+            if not vim.fn.isdirectory(path) ~= 0 then
                 return path
+            else
+                return repo
             end
         end
     end

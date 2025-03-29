@@ -100,10 +100,10 @@ plugins=(
 )
 
 znap source zsh-users/zsh-syntax-highlighting
-# znap source zsh-users/zsh-autosuggestions
+znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-history-substring-search
-znap source zdharma-continuum/history-search-multi-word
-znap source marlonrichert/zsh-autocomplete
+# znap source zdharma-continuum/history-search-multi-word
+# znap source marlonrichert/zsh-autocomplete
 if [[ "x$P10K" != "x" ]]; then
     znap source romkatv/powerlevel10k
 fi
@@ -142,12 +142,12 @@ export FZF_COMPLETION_TRIGGER='**'
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 
-bindkey '^I' menu-select
-bindkey "$terminfo[kcbt]" menu-select
-bindkey -M menuselect '^I' menu-complete
-bindkey -M menuselect "$terminfo[kcbt]" reverse-menu-complete
-bindkey "$terminfo[kcuu1]" up-line-or-history
-bindkey "$terminfo[kcud1]" down-line-or-history
+# bindkey '^I' menu-select
+# bindkey "$terminfo[kcbt]" menu-select
+# bindkey -M menuselect '^I' menu-complete
+# bindkey -M menuselect "$terminfo[kcbt]" reverse-menu-complete
+# bindkey "$terminfo[kcuu1]" up-line-or-history
+# bindkey "$terminfo[kcud1]" down-line-or-history
 
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 [[ -f ~/.zsh_aliases ]] && . ~/.zsh_aliases
