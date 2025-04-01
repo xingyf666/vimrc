@@ -212,10 +212,10 @@ local plugins = {
     -- 'tikhomirov/vim-glsl',
 
     -- git support
-    -- {
-    --     'lewis6991/gitsigns.nvim',
-    --     config = function() require'archvim/config/gitsigns' end,
-    -- },
+    {
+        'lewis6991/gitsigns.nvim',
+        config = function() require'archvim/config/gitsigns' end,
+    },
     -- 'tpope/vim-fugitive',
     {
         "NeogitOrg/neogit",
