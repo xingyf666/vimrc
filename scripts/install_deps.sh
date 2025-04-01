@@ -113,7 +113,7 @@ install_pip() {
     fi
     index=(-i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple)
 
-    packages=(pynvim openai tiktoken)
+    packages=(pynvim openai tiktoken cmake_language_server)
     for package in "${packages[@]}"; do
         pcall "$python" -m pip install -U "${index[@]}" $package $break
     done
