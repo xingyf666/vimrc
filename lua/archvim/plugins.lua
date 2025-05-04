@@ -157,15 +157,15 @@ local plugins = {
     --     'folke/neodev.nvim',
     --     config = function() require'archvim/config/neodev' end,
     -- },
-    {
-        'rcarriga/nvim-dap-ui',
-        requires = {
-            'mfussenegger/nvim-dap',
-            'nvim-neotest/nvim-nio',
-            'theHamsta/nvim-dap-virtual-text',
-        },
-        config = function() require"archvim/config/nvim-dap" end,
-    },
+    -- {
+    --     'rcarriga/nvim-dap-ui',
+    --     requires = {
+    --         'mfussenegger/nvim-dap',
+    --         'nvim-neotest/nvim-nio',
+    --         'theHamsta/nvim-dap-virtual-text',
+    --     },
+    --     config = function() require"archvim/config/nvim-dap" end,
+    -- },
     -- {
     --     'cpiger/NeoDebug',
     --     config = function() end,
@@ -381,6 +381,7 @@ local plugins = {
         requires = "nvim-lua/plenary.nvim",
         config = function() require'archvim/config/cmake-tools' end,
     },
+    'normen/vim-pio',
     -- {
     --     "Mythos-404/xmake.nvim",
     --     requires = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },

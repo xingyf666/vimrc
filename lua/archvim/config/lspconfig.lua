@@ -16,6 +16,10 @@ end
 (function()
     local old_notify = rawget(vim, 'notify')
     rawset(vim, 'notify', function(msg, ...)
+        -- if msg:match([[clangd: -32602]]) then
+        --     return
+        -- end
+        --
         if msg:match([[{ "Corresponding file cannot be determined" }]]) then
             vim.cmd[[Ouroboros]]
             return
@@ -26,6 +30,10 @@ end
 end)()
 
 local function clangd_on_attach(client, bufnr)
+    if vim.api.nvim_buf_get_name(bufnr):match "^%a+://" then
+        return
+    end
+
     local function switch_source_header()
         local params = {
             command = 'textDocument/switchSourceHeader',
