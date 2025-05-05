@@ -29,7 +29,8 @@ if not require'archvim.options'.enable_clipboard then
 end
 
 vim.cmd [[
-silent! colorscheme zephyr
+" silent! colorscheme zephyr
+silent! colorscheme gruvbox
 ]]
 
 -- More custom options goes here
