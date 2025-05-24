@@ -162,3 +162,56 @@ bloop() {
     unset LOOPCOMMAND
     export LOOPCOMMAND
 }
+
+clangdpioesp() {
+> .clangd << EOF
+CompileFlags:
+  Remove:
+    - -mlongcalls
+    - -fno-shrink-wrap
+    - -fno-tree-switch-conversion
+    - -fstrict-volatile-bitfields
+  Add:
+    - -fgnuc-version=12.3.1
+EOF
+    for x in $(ls -d ~/.platformio/packages/framework-arduinoespressif32/libraries/*/); do
+        echo "    - -I${x}src" >> .clangd
+    done
+}
+
+happypio() {
+    pio project init --board ${1-nanoatmega328}
+    > src/main.cpp << EOF
+#include <Arduino.h>
+
+void setup() {
+    Serial.begin(115200);
+}
+
+void loop() {
+}
+EOF
+    > compiledb_flags.py << EOF
+Import("env")
+
+env.Replace(COMPILATIONDB_INCLUDE_TOOLCHAIN=True)
+EOF
+    >> .gitignore << EOF
+.cache/
+src/secrets.h
+EOF
+    >> platformio.ini << EOF
+extra_scripts = pre:compiledb_flags.py
+build_unflags =
+    -std=gnu++11
+build_flags =
+    -std=c++17
+monitor_speed = 115200
+lib_deps =
+EOF
+    pio run --target compiledb
+}
+
+happyidf() {
+    . ~/esp/esp-idf/export.sh
+}

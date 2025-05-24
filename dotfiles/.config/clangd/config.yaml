@@ -6,6 +6,10 @@ CompileFlags:
     - -D__clangd__  # 添加你的自定义选项
     # - -fgnuc-version=12.3.1
   Remove:
+    - -mlongcalls
+    - -fno-shrink-wrap
+    - -fno-tree-switch-conversion
+    - -fstrict-volatile-bitfields
     - -forward-unknown-to-host-compiler
     - -expt-*
     - --expt-*
