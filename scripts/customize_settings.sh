@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "-- Configuring ~/.local/share/nvim/archvim/opts.json"
 mkdir -p ~/.local/share/nvim/archvim
 
