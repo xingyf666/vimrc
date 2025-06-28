@@ -258,6 +258,12 @@ vim.keymap.set({"v", "n"}, "gso", "<cmd>AerialToggle!<CR>", { desc = "Toggle aer
 vim.keymap.set({"v", "n"}, "gy", "<cmd>Telescope lsp_type_definitions<CR>", { desc = 'Goto type definition' })
 -- 查找所有引用
 vim.keymap.set({"v", "n"}, "gr", "<cmd>Telescope lsp_references<CR>", { desc = 'Find references' })
+-- 删除预定义的一些干扰
+pcall(vim.keymap.del, {"n"}, "gri")
+pcall(vim.keymap.del, {"n"}, "grr")
+pcall(vim.keymap.del, {"v", "n"}, "gra")
+pcall(vim.keymap.del, {"n"}, "grn")
+pcall(vim.keymap.del, {"v"}, "grc")
 -- 查找函数实现
 vim.keymap.set({"v", "n"}, "gY", "<cmd>Telescope lsp_implementations<CR>", { desc = 'Find implementations' })
 -- 查看全部
