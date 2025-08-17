@@ -264,6 +264,7 @@ pcall(vim.keymap.del, {"n"}, "grr")
 pcall(vim.keymap.del, {"v", "n"}, "gra")
 pcall(vim.keymap.del, {"n"}, "grn")
 pcall(vim.keymap.del, {"v"}, "grc")
+pcall(vim.keymap.del, {"n"}, "grt")
 -- 查找函数实现
 vim.keymap.set({"v", "n"}, "gY", "<cmd>Telescope lsp_implementations<CR>", { desc = 'Find implementations' })
 -- 查看全部

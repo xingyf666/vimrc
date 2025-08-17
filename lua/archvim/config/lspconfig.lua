@@ -132,21 +132,21 @@ local function setup_lsp(event)
     --     end,
     -- })
 
-    if client.supports_method('textDocument/signatureHelp') then
-        if vim.lsp.buf.signature_help ~= nil and require'archvim.options'.enable_signature_help then
-            local group = vim.api.nvim_create_augroup('signature_help', {clear = false})
-
-            vim.api.nvim_clear_autocmds({buffer = event.buf, group = group})
-
-            vim.api.nvim_create_autocmd({'CursorHoldI'}, {
-                group = group,
-                buffer = event.buf,
-                callback = function()
-                    vim.lsp.buf.signature_help()
-                end
-            })
-        end
-    end
+    -- if client.supports_method('textDocument/signatureHelp') then
+    --     if vim.lsp.buf.signature_help ~= nil and require'archvim.options'.enable_signature_help then
+    --         local group = vim.api.nvim_create_augroup('signature_help', {clear = false})
+    --
+    --         vim.api.nvim_clear_autocmds({buffer = event.buf, group = group})
+    --
+    --         vim.api.nvim_create_autocmd({'CursorHoldI'}, {
+    --             group = group,
+    --             buffer = event.buf,
+    --             callback = function()
+    --                 vim.lsp.buf.signature_help()
+    --             end
+    --         })
+    --     end
+    -- end
 end
 
 vim.api.nvim_create_autocmd('LspAttach', {

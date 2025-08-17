@@ -399,10 +399,10 @@ local plugins = {
     -- },
 
     -- cursor motion
-    {
-        "folke/which-key.nvim",
-        config = function() require"archvim/config/which-key" end,
-    },
+    -- {
+    --     "folke/which-key.nvim",
+    --     config = function() require"archvim/config/which-key" end,
+    -- },
     {
         "phaazon/hop.nvim",
         config = function() require"archvim/config/hop" end,

@@ -34,6 +34,9 @@ vim.notify = function(msg, ...)
         -- into "No results for **qflist**"
         msg = msg:gsub("No results for %*%*([%w_]+)%*%*\nBuffer: .+", "No results for %1")
     end
+    if msg:match("is deprecated%. Run \":checkhealth vim%.deprecated\" for more information") then
+        return
+    end
 
     old_notify(msg, ...)
 end

@@ -244,3 +244,7 @@ dbpio() {
 happyidf() {
     . ~/esp/esp-idf/export.sh
 }
+
+glibcver() {
+    strings "$@" | grep '^GLIBC_[0-9]' | sort -V | tail -n1
+}

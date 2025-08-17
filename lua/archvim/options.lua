@@ -58,7 +58,7 @@ local default_opts = {
     disable_notify = true,
     transparent_color = true,
     more_cpp_ftdetect = true,
-    enable_signature_help = true,
+    enable_signature_help = false,
     enable_inlay_hint = true,
     enable_clipboard = true,
 }
