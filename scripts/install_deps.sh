@@ -160,6 +160,7 @@ install_apt() {
     pcall sudo apt-get install -y clang-format
     pcall sudo apt-get install -y nodejs
     pcall sudo apt-get install -y npm
+    pcall sudo apt-get install -y libstdc++-12-dev
     install_pip
     install_npm
 }

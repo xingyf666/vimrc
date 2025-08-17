@@ -87,9 +87,9 @@ vim.keymap.set({"v", "n", "i", "t"}, "<F7>", "<cmd>NvimTreeFindFileToggle<CR>", 
 vim.keymap.set({"v", "n", "i", "t"}, "<F9>", "<cmd>Trouble diagnostics toggle focus=false<CR>", { silent = true })
 vim.keymap.set({"v", "n", "i", "t"}, "<F21>", "<cmd>Trouble diagnostics toggle focus=false filter.buf=0<CR>", { silent = true })
 if pcall(require, "cmake-tools") then
-    vim.keymap.set({"v", "n", "i", "t"}, "<F5>", "<cmd>wa<CR><cmd>if luaeval('require\"cmake-tools\".is_cmake_project()')|call execute('CMakeRun')|elseif filereadable('platformio.ini')|call execute('TermExec cmd=\\<C-c>')|sleep 24m|call execute('TermExec cmd=''platformio -f -c vim run --target upload''')|call execute('TermExec cmd=''platformio -f -c vim device monitor''')|elseif filereadable('run.sh')|call execute('TermExec cmd=./run.sh')|endif<CR>", { silent = true })
+    vim.keymap.set({"v", "n", "i", "t"}, "<F5>", "<cmd>wa<CR><cmd>if luaeval('require\"cmake-tools\".is_cmake_project()')|call execute('CMakeRun')|elseif filereadable('platformio.ini')|call execute('TermExec cmd=\\<C-c>')|sleep 24m|call execute('TermExec cmd=''platformio -f -c vim run --target upload && platformio -f -c vim device monitor''')|elseif filereadable('run.sh')|call execute('TermExec cmd=./run.sh')|endif<CR>", { silent = true })
     vim.keymap.set({"v", "n", "i", "t"}, "<F17>", "<cmd>wa<CR><cmd>if luaeval('require\"cmake-tools\".is_cmake_project()')|call execute('CMakeStopRunner')|call execute('CMakeStopExecutor')|else|call execute('TermExec cmd=\\<C-c>')|endif<CR>", { silent = true })
-    vim.keymap.set("n", "cmr", "<cmd>wa<CR><cmd>if luaeval('require\"cmake-tools\".is_cmake_project()')|call execute('CMakeRun')|elseif filereadable('platformio.ini')|call execute('TermExec cmd=\\<C-c>')|sleep 24m|call execute('TermExec cmd=''platformio -f -c vim run --target upload''')|call execute('TermExec cmd=''platformio -f -c vim device monitor''')|elseif filereadable('run.sh')|call execute('TermExec cmd=./run.sh')|endif<CR>", { silent = true, desc = 'CMakeRun' })
+    vim.keymap.set("n", "cmr", "<cmd>wa<CR><cmd>if luaeval('require\"cmake-tools\".is_cmake_project()')|call execute('CMakeRun')|elseif filereadable('platformio.ini')|call execute('TermExec cmd=\\<C-c>')|sleep 24m|call execute('TermExec cmd=''platformio -f -c vim run --target upload && platformio -f -c vim device monitor''')|elseif filereadable('run.sh')|call execute('TermExec cmd=./run.sh')|endif<CR>", { silent = true, desc = 'CMakeRun' })
     vim.keymap.set("n", "cmb", "<cmd>wa<CR><cmd>if luaeval('require\"cmake-tools\".is_cmake_project()')|call execute('CMakeBuild')|elseif filereadable('platformio.ini')|call execute('TermExec cmd=''platformio -f -c vim run''')|elseif filereadable('Makefile')|call execute('TermExec cmd=make')|elseif filereadable('build.sh')|call execute('TermExec cmd=./build.sh')|endif<CR>", { silent = true, desc = 'CMakeBuild' })
     vim.keymap.set("n", "cmc", "<cmd>wa<CR><cmd>if luaeval('require\"cmake-tools\".is_cmake_project()')|call execute('CMakeGenerate')|elseif filereadable('platformio.ini')|call execute('TermExec cmd=''platformio -f -c vim run --target compiledb''')|elseif filereadable('Makefile')|call execute('TermExec cmd=make configure')|elseif filereadable('configure')|call execute('TermExec cmd=./configure')|endif<CR>", { silent = true, desc = 'CMakeGenerate' })
     vim.keymap.set("n", "cms", "<cmd>wa<CR><cmd>if luaeval('require\"cmake-tools\".is_cmake_project()')|call execute('CMakeStopRunner')|call execute('CMakeStopExecutor')|else|call execute('TermExec cmd=\\<C-c>')|endif<CR>", { silent = true, desc = 'CMakeStopRunner' })
@@ -258,6 +258,12 @@ vim.keymap.set({"v", "n"}, "gso", "<cmd>AerialToggle!<CR>", { desc = "Toggle aer
 vim.keymap.set({"v", "n"}, "gy", "<cmd>Telescope lsp_type_definitions<CR>", { desc = 'Goto type definition' })
 -- 查找所有引用
 vim.keymap.set({"v", "n"}, "gr", "<cmd>Telescope lsp_references<CR>", { desc = 'Find references' })
+-- 删除预定义的一些干扰
+pcall(vim.keymap.del, {"n"}, "gri")
+pcall(vim.keymap.del, {"n"}, "grr")
+pcall(vim.keymap.del, {"v", "n"}, "gra")
+pcall(vim.keymap.del, {"n"}, "grn")
+pcall(vim.keymap.del, {"v"}, "grc")
 -- 查找函数实现
 vim.keymap.set({"v", "n"}, "gY", "<cmd>Telescope lsp_implementations<CR>", { desc = 'Find implementations' })
 -- 查看全部

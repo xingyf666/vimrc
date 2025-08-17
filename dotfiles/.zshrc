@@ -162,3 +162,85 @@ bloop() {
     unset LOOPCOMMAND
     export LOOPCOMMAND
 }
+
+clangdpioesp() {
+> .clangd << EOF
+CompileFlags:
+  Remove:
+    - -mlongcalls
+    - -fno-shrink-wrap
+    - -fno-tree-switch-conversion
+    - -fstrict-volatile-bitfields
+    - -mfix-esp32-psram-cache-issue
+    - -fipa-pta
+    - -free
+    - -mtext-section-literals
+  Add:
+    - -fgnuc-version=12.3.1
+EOF
+    fw=framework-arduinoespressif32
+    if grep framework-arduinoespressif8266 compile_commands.json > /dev/null; then
+        fw=framework-arduinoespressif8266
+    fi
+    for x in $(ls -d ~/.platformio/packages/$fw/libraries/*/); do
+        if [ -d ${x}src ]; then
+            echo "    - -isystem${x}src" >> .clangd
+        else
+            echo "    - -isystem${x}" >> .clangd
+        fi
+    done
+    if grep xtensa- compile_commands.json > /dev/null; then
+>> .clangd << EOF
+    - -D__XTENSA__=1
+    - -D__machine_ssize_t_defined=1
+    - -D_ssize_t=int
+EOF
+    fi
+}
+
+happypio() {
+    pio project init --board ${1-nanoatmega328}
+    > src/main.cpp << EOF
+#include <Arduino.h>
+
+void setup() {
+    Serial.begin(115200);
+}
+
+void loop() {
+}
+EOF
+    > compiledb_flags.py << EOF
+Import("env")
+
+env.Replace(COMPILATIONDB_INCLUDE_TOOLCHAIN=True)
+EOF
+    >> .gitignore << EOF
+.cache/
+src/secrets.h
+EOF
+    >> platformio.ini << EOF
+extra_scripts = pre:compiledb_flags.py
+build_unflags =
+    -std=gnu++11
+build_flags =
+    -std=gnu++17
+monitor_speed = 115200
+lib_deps =
+EOF
+    pio run --target compiledb
+}
+
+dbpio() {
+    pio run --target compiledb
+    if grep toolchain-xtensa-esp compile_commands.json > /dev/null; then
+        sed -i 's/ -I\S*toolchain-riscv32-esp\S*//g' compile_commands.json
+        if test -f .clangd && ! grep __XTENSA__ .clangd > /dev/null; then
+            echo "    - -D__XTENSA__=1" >> .clangd
+        fi
+    fi
+}
+
+happyidf() {
+    . ~/esp/esp-idf/export.sh
+}
