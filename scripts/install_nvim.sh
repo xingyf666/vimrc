@@ -25,7 +25,7 @@ install_snap() {
 
 fix_nvim_appimage() {
     sudo mv /usr/bin/nvim /usr/bin/.nvim.appimage.noextract
-    echo 'x=$$; mkdir -p /tmp/_nvim_appimg_.$x && bash -c "cd /tmp/_nvim_appimg_.$x && /usr/bin/.nvim.appimage.noextract --appimage-extract > /dev/null 2>&1" && /tmp/_nvim_appimg_.$x/squashfs-root/AppRun "$@"; y=$?; rm -rf /tmp/_nvim_appimg_.$x exit $y' | sudo tee /usr/bin/nvim
+    echo 'x=$$; mkdir -p /tmp/_nvim_appimg_.$x && bash -c "cd /tmp/_nvim_appimg_.$x && /usr/bin/.nvim.appimage.noextract --appimage-extract > /dev/null 2>&1" && /tmp/_nvim_appimg_.$x/squashfs-root/AppRun "$@"; ret=$?; rm -rf /tmp/_nvim_appimg_.$x; exit $ret' | sudo tee /usr/bin/nvim
     sudo chmod +x /usr/bin/nvim
     # echo exec \"\$@\" > /bin/sudo; chmod +x /bin/sudo
 }
