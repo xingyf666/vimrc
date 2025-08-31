@@ -446,6 +446,10 @@ function scratch.append(cmd)
     end)
 end
 
+local utils = require'cmake-tools.utils'
+function utils.softlink(src, target)
+end
+
 -- vim.cmd [[
 -- " avoid terminal hanging
 -- augroup auto_close_term

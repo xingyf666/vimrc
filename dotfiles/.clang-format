@@ -115,8 +115,8 @@ SpaceAroundPointerQualifiers: After
 ReflowComments: true
 QualifierAlignment: Custom
 QualifierOrder: ['static', 'inline', 'friend', 'constexpr', 'type', 'const', 'volatile']
-IncludeCategories:
-- Regex:           'std\.hpp>$'
-  Priority:        1
-- Regex:           '.*'
-  Priority:        2
+# IncludeCategories:
+# - Regex:           'std\.hpp>$'
+#   Priority:        1
+# - Regex:           '.*'
+#   Priority:        2
