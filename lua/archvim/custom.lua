@@ -28,6 +28,10 @@ if not require'archvim.options'.enable_clipboard then
     ]]
 end
 
+if vim.g.vscode then
+    vim.g.clipboard = vim.g.vscode_clipboard
+end
+
 vim.cmd [[
 " silent! colorscheme zephyr
 silent! colorscheme gruvbox

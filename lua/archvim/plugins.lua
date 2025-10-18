@@ -256,6 +256,10 @@ local plugins = {
     --     config = function() require'archvim/config/nvim-autopairs' end,
     -- },
     -- "terryma/vim-expand-region",
+    {
+        'nguyenvukhang/nvim-toggler',
+        config = function() require'nvim-toggler'.setup() end,
+    },
 
     -- code actions
     {
@@ -336,6 +340,7 @@ local plugins = {
             -- "nvim-telescope/telescope-live-grep-raw.nvim",
         },
         config = function() require"archvim/config/telescope" end,
+        cond = function() return not vim.g.vscode end,
     },
     "ibhagwan/fzf-lua",
     -- {
