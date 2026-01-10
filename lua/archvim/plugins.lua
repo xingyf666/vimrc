@@ -258,7 +258,13 @@ local plugins = {
     -- "terryma/vim-expand-region",
     {
         'nguyenvukhang/nvim-toggler',
-        config = function() require'nvim-toggler'.setup() end,
+        config = function()
+            require'nvim-toggler'.setup{
+                remove_default_keybinds = true,
+                remove_default_inverses = false,
+                autoselect_longest_match = false,
+            }
+        end,
     },
 
     -- code actions
@@ -340,7 +346,7 @@ local plugins = {
             -- "nvim-telescope/telescope-live-grep-raw.nvim",
         },
         config = function() require"archvim/config/telescope" end,
-        cond = function() return not vim.g.vscode end,
+        -- cond = function() return vim.g.vscode == nil end,
     },
     "ibhagwan/fzf-lua",
     -- {

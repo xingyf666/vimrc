@@ -284,6 +284,8 @@ vim.keymap.set({"v", "n"}, "g<C-o>", "<cmd>vsplit | ClangdSwitchSourceHeader<CR>
 vim.keymap.set({'n'}, '<S-Tab>', '<C-o>')
 -- vim.keymap.set({'i'}, '<C-Space>', '<Space>')
 
+vim.keymap.set({'n', 'v'}, 'gsi', "<cmd>lua require('nvim-toggler').toggle()<CR>", { silent = true })
+
 -- vim.keymap.set({'v', 'n'}, 'gp', ':GPT<Space>')
 -- vim.keymap.set({'v', 'n'}, 'gP', ':GPT!<Space>')
 -- vim.keymap.set({'i'}, '<C-Space>', '<Cmd>GPT<CR>')
