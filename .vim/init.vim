@@ -399,10 +399,10 @@ imap <C-q> <ESC><C-q>
 tmap <C-q> <ESC><C-q>
 "nnoremap Z :wa!<CR>:qa!<CR>
 "vmap Z <ESC>Z
-nnoremap <silent><expr> H (v:count == 0 ? '^' : '^^' . (v:count == 1 ? (v:count - 1) . 'l' : ''))
-nnoremap <silent><expr> L (v:count == 0 ? '$' : '^$' . (v:count == 1 ? (v:count - 1) . 'h' : ''))
-xnoremap <silent><expr> H (v:count == 0 ? '^' : '^^' . (v:count == 1 ? (v:count - 1) . 'l' : ''))
-xnoremap <silent><expr> L (v:count == 0 ? '$' : '^$' . (v:count == 1 ? (v:count - 1) . 'h' : ''))
+nnoremap <silent><expr> H (v:count == 0 ? '^' : '^^' . (v:count != 1 ? (v:count - 1) . 'l' : ''))
+nnoremap <silent><expr> L (v:count == 0 ? '$' : '^$' . (v:count != 1 ? (v:count - 1) . 'h' : ''))
+xnoremap <silent><expr> H (v:count == 0 ? '^' : '^^' . (v:count != 1 ? (v:count - 1) . 'l' : ''))
+xnoremap <silent><expr> L (v:count == 0 ? '$' : '^$' . (v:count != 1 ? (v:count - 1) . 'h' : ''))
 "nnoremap z zz
 "vnoremap z zz
 "nnoremap <CR> O<ESC>cc<ESC>j
