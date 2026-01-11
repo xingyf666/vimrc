@@ -592,7 +592,7 @@ if archvim_predownload and archvim_predownload ~= 0 then
             --     return vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
             -- end
             local path = string.format('%s/predownload/%s', thisdir, repo)
-            if not vim.fn.isdirectory(path) ~= 0 then
+            if vim.fn.isdirectory(path) ~= 0 then
                 return path
             else
                 return repo
