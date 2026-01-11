@@ -282,6 +282,19 @@ local aerial = {
         end
     end,
 }
+local opencode = {
+    function () return require("opencode").statusline() end,
+    cond = function()
+        return pcall(require, "opencode")
+    end,
+    on_click = function(n, mouse)
+        if (n == 1) then
+            if (mouse == "l") then
+                require("opencode").select()
+            end
+        end
+    end,
+}
 
 -- local fcitx_cmd = nil
 -- if vim.fn.executable('fcitx-remote') == 1 then
@@ -335,7 +348,7 @@ require'lualine'.setup {
     },
     sections = {
         lualine_a = {'mode'},
-        lualine_b = {branch, diagnostics},
+        lualine_b = {opencode, branch, diagnostics},
         lualine_c = {filename},
         lualine_x = {diff, encoding},
         lualine_y = {'searchcount', 'quickfix', 'progress'},

@@ -436,23 +436,33 @@ local plugins = {
     -- },
 
     -- neo-pioneering
+    {
+        "NickvanDyke/opencode.nvim",
+        dependencies = {
+            -- Recommended for `ask()` and `select()`.
+            -- Required for `snacks` provider.
+            ---@module 'snacks' <- Loads `snacks.nvim` types for configuration intellisense.
+            { "folke/snacks.nvim", opts = { input = {}, picker = {}, terminal = {} } },
+        },
+        config = function () require"archvim/config/opencode" end,
+    },
     -- {
     --     os.getenv('ARCHIBATE_COMPUTER') and '/home/bate/Codes/nvim-gpt' or 'archibate/nvim-gpt',
     --     requires = { 'nvim-telescope/telescope.nvim' },
     --     config = function() require"archvim/config/nvim-gpt" end,
     -- },
-    {
-        os.getenv('ARCHIBATE_COMPUTER') and '/home/bate/Codes/gpt4o.nvim' or 'archibate/gpt4o',
-        run = ':UpdateRemotePlugins',
-    },
-    {
-        os.getenv('ARCHIBATE_COMPUTER') and '/home/bate/Codes/genius.nvim' or 'archibate/genius.nvim',
-        requires = {
-            'nvim-lua/plenary.nvim',
-            'MunifTanjim/nui.nvim',
-        },
-        config = function() require"archvim/config/genius" end,
-    },
+    -- {
+    --     os.getenv('ARCHIBATE_COMPUTER') and '/home/bate/Codes/gpt4o.nvim' or 'archibate/gpt4o',
+    --     run = ':UpdateRemotePlugins',
+    -- },
+    -- {
+    --     os.getenv('ARCHIBATE_COMPUTER') and '/home/bate/Codes/genius.nvim' or 'archibate/genius.nvim',
+    --     requires = {
+    --         'nvim-lua/plenary.nvim',
+    --         'MunifTanjim/nui.nvim',
+    --     },
+    --     config = function() require"archvim/config/genius" end,
+    -- },
     -- {
     --     "yetone/avante.nvim",
     --     run = "make",

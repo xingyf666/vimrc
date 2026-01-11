@@ -39,6 +39,8 @@ alias gsmu='git submodule update --init --recursive'
 alias g='git'
 alias p='python'
 alias b='nvim'
+alias oc='opencode'
+alias os='openspec'
 alias sup='sudo pacman'
 alias h='history | tail'
 
