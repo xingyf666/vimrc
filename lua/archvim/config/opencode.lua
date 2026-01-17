@@ -6,19 +6,16 @@ vim.g.opencode_opts = {
 vim.o.autoread = true
 
 -- Recommended/example keymaps.
-vim.keymap.set({ "n", "x" }, "<C-x>a", function() require("opencode").ask("@this: ", { submit = true }) end, { desc = "Ask opencode" })
-vim.keymap.set({ "n", "x" }, "<C-x>s", function() require("opencode").select() end,                          { desc = "Execute opencode action…" })
-vim.keymap.set({ "n", "t" }, "<C-x>x", function() require("opencode").toggle() end,                          { desc = "Toggle opencode" })
+vim.keymap.set({ "n", "x" }, "<C-p>a", function() require("opencode").ask("@this: ", { submit = true }) end, { desc = "Ask opencode" })
+vim.keymap.set({ "n", "x" }, "<C-p>s", function() require("opencode").select() end,                          { desc = "Execute opencode action…" })
+vim.keymap.set({ "n", "t" }, "<C-p>x", function() require("opencode").toggle() end,                          { desc = "Toggle opencode" })
 
-vim.keymap.set({ "n", "x" }, "gx",  function() return require("opencode").operator("@this ") end,        { expr = true, desc = "Add range to opencode" })
-vim.keymap.set("n",          "gxx", function() return require("opencode").operator("@this ") .. "_" end, { expr = true, desc = "Add line to opencode" })
+vim.keymap.set({ "n", "x" }, "gp",  function() return require("opencode").operator("@this ") end,        { expr = true, desc = "Add range to opencode" })
+vim.keymap.set("n",          "gpp", function() return require("opencode").operator("@this ") .. "_" end, { expr = true, desc = "Add line to opencode" })
 
-vim.keymap.set("n", "<C-x><C-u>", function() require("opencode").command("session.half.page.up") end,   { desc = "opencode half page up" })
-vim.keymap.set("n", "<C-x><C-d>", function() require("opencode").command("session.half.page.down") end, { desc = "opencode half page down" })
-
--- You may want these if you stick with the opinionated "<C-a>" and "<C-x>" above — otherwise consider "<leader>o".
--- vim.keymap.set("n", "<C-a>", "<C-a>", { desc = "Increment", noremap = true })
-vim.keymap.set("n", "<C-x><C-x>", "<C-x>", { desc = "Decrement", noremap = true })
+vim.keymap.set("n", "<C-p><C-u>", function() require("opencode").command("session.half.page.up") end,   { desc = "opencode half page up" })
+vim.keymap.set("n", "<C-p><C-d>", function() require("opencode").command("session.half.page.down") end, { desc = "opencode half page down" })
+vim.keymap.set("n", "<C-p><C-p>", "<C-p>", { noremap = true })
 
 
 

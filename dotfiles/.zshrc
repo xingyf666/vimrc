@@ -250,6 +250,3 @@ glibcver() {
 }
 
 [ ! -f ~/.config/tmux/scripts/tmux_aliases.sh ] || source ~/.config/tmux/scripts/tmux_aliases.sh
-
-# Tmux aliases
-[ -f ~/.config/tmux/tmux_aliases.sh ] && source ~/.config/tmux/tmux_aliases.sh

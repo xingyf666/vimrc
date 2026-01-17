@@ -233,7 +233,7 @@ local plugins = {
         'nvim-lualine/lualine.nvim',
         config = function() require'archvim/config/lualine' end,
         requires = {
-            'archibate/lualine-time',
+            -- 'archibate/lualine-time',
             -- 'archibate/lualine-lsp-progress',
         },
     },
@@ -258,13 +258,7 @@ local plugins = {
     -- "terryma/vim-expand-region",
     {
         'nguyenvukhang/nvim-toggler',
-        config = function()
-            require'nvim-toggler'.setup{
-                remove_default_keybinds = true,
-                remove_default_inverses = false,
-                autoselect_longest_match = false,
-            }
-        end,
+        config = function() require 'archvim/config/nvim-toggler' end,
     },
 
     -- code actions
@@ -440,16 +434,16 @@ local plugins = {
     -- },
 
     -- neo-pioneering
-    {
-        "NickvanDyke/opencode.nvim",
-        dependencies = {
-            -- Recommended for `ask()` and `select()`.
-            -- Required for `snacks` provider.
-            ---@module 'snacks' <- Loads `snacks.nvim` types for configuration intellisense.
-            { "folke/snacks.nvim", opts = { input = {}, picker = {}, terminal = {} } },
-        },
-        config = function () require"archvim/config/opencode" end,
-    },
+    -- {
+    --     "NickvanDyke/opencode.nvim",
+    --     dependencies = {
+    --         -- Recommended for `ask()` and `select()`.
+    --         -- Required for `snacks` provider.
+    --         ---@module 'snacks' <- Loads `snacks.nvim` types for configuration intellisense.
+    --         { "folke/snacks.nvim", opts = { input = {}, picker = {}, terminal = {} } },
+    --     },
+    --     config = function () require"archvim/config/opencode" end,
+    -- },
     -- {
     --     os.getenv('ARCHIBATE_COMPUTER') and '/home/bate/Codes/nvim-gpt' or 'archibate/nvim-gpt',
     --     requires = { 'nvim-telescope/telescope.nvim' },
