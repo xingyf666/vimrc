@@ -400,6 +400,10 @@ CompileFlags:
     - -rdc=*
 ```
 
+## Tmux 适配
+
+本插件包自带了
+
 ## 内含插件列表
 
 完整插件列表，请查看 [`lua/archvim/plugins.lua`](lua/archvim/plugins.lua)，你可以编辑该文件，从而修改配置或添加新的插件。
