@@ -290,7 +290,7 @@ local opencode = {
     on_click = function(n, mouse)
         if (n == 1) then
             if (mouse == "l") then
-                require("opencode").select()
+                require("opencode").toggle()
             end
         end
     end,

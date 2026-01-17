@@ -434,16 +434,16 @@ local plugins = {
     -- },
 
     -- neo-pioneering
-    -- {
-    --     "NickvanDyke/opencode.nvim",
-    --     dependencies = {
-    --         -- Recommended for `ask()` and `select()`.
-    --         -- Required for `snacks` provider.
-    --         ---@module 'snacks' <- Loads `snacks.nvim` types for configuration intellisense.
-    --         { "folke/snacks.nvim", opts = { input = {}, picker = {}, terminal = {} } },
-    --     },
-    --     config = function () require"archvim/config/opencode" end,
-    -- },
+    {
+        "NickvanDyke/opencode.nvim",
+        dependencies = {
+            -- Recommended for `ask()` and `select()`.
+            -- Required for `snacks` provider.
+            ---@module 'snacks' <- Loads `snacks.nvim` types for configuration intellisense.
+            { "folke/snacks.nvim", opts = { input = {}, picker = {}, terminal = {} } },
+        },
+        config = function () require"archvim/config/opencode" end,
+    },
     -- {
     --     os.getenv('ARCHIBATE_COMPUTER') and '/home/bate/Codes/nvim-gpt' or 'archibate/nvim-gpt',
     --     requires = { 'nvim-telescope/telescope.nvim' },

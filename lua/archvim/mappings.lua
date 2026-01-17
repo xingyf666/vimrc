@@ -140,6 +140,8 @@ vim.keymap.set({'v', 'n', 'i', 't'}, '<Ins>', [[<Cmd>ZenMode<CR>]])
 -- })
 
 vim.keymap.set({'c'}, '<C-a>', [[<Home>]])
+vim.keymap.set({'i'}, '<C-a>', [[<Cmd>normal ^<CR>]])
+vim.keymap.set({'i'}, '<C-e>', [[<End>]])
 
 if false then -- conflict with tmux M-hjkl, disable for now
     vim.keymap.set({'v', 'n'}, '<M-h>', [[h8h]])

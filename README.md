@@ -119,6 +119,7 @@ curl -SLf https://142857.red/files/nvimrc-install.sh | bash
 - `gx` 打开光标下的网页链接
 
 - `<C-o>` 跳转回来
+- `<C-i>` 跳转回去
 
 **重构**
 
