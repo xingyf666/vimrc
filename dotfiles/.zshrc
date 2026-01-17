@@ -248,3 +248,5 @@ happyidf() {
 glibcver() {
     strings "$@" | grep '^GLIBC_[0-9]' | sort -V | tail -n1
 }
+
+[ ! -f ~/.config/tmux/scripts/tmux_aliases.sh ] || source ~/.config/tmux/scripts/tmux_aliases.sh
