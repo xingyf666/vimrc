@@ -36,8 +36,6 @@ vim.keymap.set("n", "<C-]><C-d>", function() require("opencode").command("sessio
 
 vim.g.opencode_opts = {
   provider = {
-    enabled = "tmux",
-    tmux = {
-    }
+    enabled = os.getenv('TMUX') and "tmux" or "terminal",
   }
 }

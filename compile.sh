@@ -11,7 +11,7 @@ fi
 unset ARCHIBATE_COMPUTER
 export ARCHIBATE_COMPUTER
 compress=z
-version_min=090
+version_min=0100
 treesitters=(c cpp cuda cmake lua python html javascript css json bash regex markdown diff glsl vim vimdoc)
 commands=(sudo base64 tar mktemp cat tee rm mkdir test cp mv stat grep echo uname)
 
@@ -38,9 +38,6 @@ for x in "$cache"/archvim-release/nvim-treesitter-parser/*.so; do
     strip -s "$x"
 done
 cp -r ~/.local/share/nvim/mason/registries/github/mason-org/mason-registry "$cache"/archvim-release
-test -f "$cache"/archvim-nvim.appimage || curl -L https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o "$cache"/archvim-nvim.appimage
-cp "$cache"/archvim-nvim.appimage "$cache"/archvim-release/nvim.appimage
-chmod u+x nvim.appimage
 tar -${compress}cf "$payload" .
 cd "$(dirname "$0")"
 rm -rf "$cache"/archvim-release
@@ -74,7 +71,7 @@ if which nvim; then
 else
     version=0
 fi
-(which nvim >/dev/null 2>/dev/null && [ \"\$version\" -ge 1$version_min ]) || bash ./scripts/install_nvim.sh || echo -e \"\\n\\nERROR: cannot install NeoVim >= 0.9.1! Consider install it manually...\\n错误：无法自动安装 NeoVim 0.9.1 以上的版本！您可能需要手动安装一下……\\n\\n\"
+(which nvim >/dev/null 2>/dev/null && [ \"\$version\" -ge 1$version_min ]) || bash ./scripts/install_nvim.sh || echo -e \"\\n\\nERROR: cannot install latest NeoVim! Consider install it manually...\\n错误：无法自动安装 NeoVim 最新版本！您可能需要手动安装一下……\\n\\n\"
 nvim --version
 if [ -d ~/.config/nvim ]; then
     echo \"-- Backup existing config to ~/.config/.nvim.backup.\$\$...\"

@@ -16,7 +16,7 @@ curl -SLf https://142857.red/files/nvimrc-install.sh | bash
 
 * 目前只支持 Linux 和 MacOS 系统，暂不支持 Wendous 系统。
 * 请勿以 root 身份运行！否则会为 root 安装 nvim 插件而不是当前用户，插件安装后仅对当前用户有效。
-* 您的系统中无需事先安装有 nvim，本整合包内部已经自带了最新版 nvim 的 AppImage，可无依赖直接运行。
+* 您的系统中无需事先安装有 nvim，如果找不到 nvim 或版本不够新，本整合包会自动尝试从 snap 安装最新版 nvim。
 * 无需连接 GitHub，所有插件全部已经预下载在整合包内部，无需 GitHub 加速器！
 * 过程中会通过您系统的包管理器安装一些工具，所以只需确保包管理器的设置是国内源即可。
 * 为了能够使用补全，会为您安装如 clangd 一类的包，但即使其中一个安装失败，也不影响其他语言和编辑器整体的使用。
@@ -28,11 +28,11 @@ curl -SLf https://142857.red/files/nvimrc-install.sh | bash
 
 推荐为您的终端安装 [Nerd Fonts](https://www.nerdfonts.com/) 字体，并把终端设置为该字体。然后在 `nvim` 中输入 `:lua require'archvim.options'.nerd_fonts = true`，这样就可以显示文件类型图标了。
 
-> 小彭老师用的是 JetBrainsMono Nerd Font Regular，字号 16，这是一款专为程序员打造的等宽字体。
+> 小彭老师自己用的是 JetBrainsMono Nerd Font Regular，字号 16，这是一款专为程序员打造的等宽字体。
 
 如需自己定制插件参数、移除不想要的插件或添加更多插件：可以编辑 `~/.config/nvim/lua/archvim/plugins.lua`，里面有全部的插件列表，删除或添加即可。
 
-> 注意：删除或添加了新插件后，需要运行 `:PackerSync` 和 `:PackerCompile` 命令才能生效。
+> 注意：删除或添加了新插件后，需要运行 `:PackerSync` 命令才能生效。
 
 ### 常见问题
 
@@ -430,9 +430,12 @@ clangd,pyright,lua_ls
 
 ### 脚本会创建或修改的文件
 
+<!-- ``` -->
+<!-- /usr/bin/nvim -->
+<!-- /usr/bin/.nvim.appimage.noextract -->
+<!-- ``` -->
+
 ```
-/usr/bin/nvim
-/usr/bin/.nvim.appimage.noextract
 ~/.config/nvim
 ~/.local/share/nvim
 ~/.config/clangd
@@ -440,7 +443,7 @@ clangd,pyright,lua_ls
 ```
 
 * 如果脚本发现您已经存在 `~/.config/nvim` 目录，则会将其备份至 `~/.config/.nvim.backup.随机数字`。
-* 如果脚本发现您已经存在 `/usr/bin/nvim` 可执行文件，但版本不足 v0.10.0，则会用本整合包内置的 nvim.AppImage 替换他。
+<!-- * 如果脚本发现您已经存在 `/usr/bin/nvim` 可执行文件，但版本不足 v0.10.0，则会用本整合包内置的 nvim.AppImage 替换他。 -->
 * 请勿以 sudo 模式运行本脚本，本脚本内部自动会在需要时采取 sudo。
 
 > 欲了解本整合包安装与打包原理，请看 [`.compile.sh`](.compile.sh)。
