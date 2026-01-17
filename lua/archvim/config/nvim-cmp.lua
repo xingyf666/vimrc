@@ -106,12 +106,12 @@ cmp.setup {
             end
         end, { "i", "s" }),
         -- 出现补全
-        ['<C-j>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-        -- 取消
-        ['<C-k>'] = cmp.mapping({
-            i = cmp.mapping.abort(),
-            c = cmp.mapping.close(),
-        }),
+        -- ['<C-j>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+        -- -- 取消
+        -- ['<C-k>'] = cmp.mapping({
+        --     i = cmp.mapping.abort(),
+        --     c = cmp.mapping.close(),
+        -- }),
         -- RIME 专用确认
         -- ['<Space>'] = cmp.mapping(function(fallback)
         --     if cmp.visible() then

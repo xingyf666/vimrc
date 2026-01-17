@@ -71,6 +71,12 @@ curl -SLf https://142857.red/files/nvimrc-install.sh | bash
 - Deepin (感谢 @zhangasia 大佬)
 - MacOS (感谢 @YangZ2020 测试确认)
 
+### 可搭配我的 Tmux 整合包
+
+本 NeoVim 插件整合包可与 [小彭老师 Tmux 整合包](github.com/archibate/tmux-conf) 无缝互动。
+
+> 例如 `<C-l>` 原本是在 Vim 的窗口间向左移动一格。检测到 Tmux 后，若左边已没有 Vim 窗口，则会跳出 Vim，在 Tmux 窗口间移动。同理，在 Tmux 窗口中按 `<C-h>` 向右移动（如果 Vim 刚好在右侧）可以回到 Vim 窗口。
+
 ## 开始上手
 
 ### 常用键位映射
@@ -304,6 +310,8 @@ curl -SLf https://142857.red/files/nvimrc-install.sh | bash
 - `<M-k>` 当前窗口向上扩张 1 格
 - `<M-l>` 当前窗口向右扩张 1 格
 
+> `<C-hjkl>` 和 `<M-hjkl>` 系列快捷键与 [小彭老师 Tmux 整合包](github.com/archibate/tmux-conf) 无缝适配，当没有 Vim 窗口时，会在 Tmux 窗口之间移动和调整大小
+
 - `<C-S-h>` 将当前窗口向左移动
 - `<C-S-j>` 将当前窗口向下移动
 - `<C-S-k>` 将当前窗口向上移动
@@ -399,10 +407,6 @@ CompileFlags:
     - -arch=*
     - -rdc=*
 ```
-
-## Tmux 适配
-
-本插件包自带了
 
 ## 内含插件列表
 

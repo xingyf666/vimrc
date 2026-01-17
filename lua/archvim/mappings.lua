@@ -167,11 +167,16 @@ if not pcall(require, 'tmux') then
     vim.keymap.set({'v', 'n', 'i', 't'}, '<C-j>', [[<Cmd>wincmd j<CR>]])
     vim.keymap.set({'v', 'n', 'i', 't'}, '<C-k>', [[<Cmd>wincmd k<CR>]])
     vim.keymap.set({'v', 'n', 'i', 't'}, '<C-l>', [[<Cmd>wincmd l<CR>]])
-    vim.keymap.set({'v', 'n', 'i', 't'}, '<C-S-h>', [[<Cmd>wincmd H<CR>]])
-    vim.keymap.set({'v', 'n', 'i', 't'}, '<C-S-j>', [[<Cmd>wincmd J<CR>]])
-    vim.keymap.set({'v', 'n', 'i', 't'}, '<C-S-k>', [[<Cmd>wincmd K<CR>]])
-    vim.keymap.set({'v', 'n', 'i', 't'}, '<C-S-l>', [[<Cmd>wincmd L<CR>]])
+else
+    vim.keymap.set({'v', 'i', 't'}, '<C-h>', [[<Cmd>lua require'tmux'.move_left()<CR>]])
+    vim.keymap.set({'v', 'i', 't'}, '<C-j>', [[<Cmd>lua require'tmux'.move_bottom()<CR>]])
+    vim.keymap.set({'v', 'i', 't'}, '<C-k>', [[<Cmd>lua require'tmux'.move_top()<CR>]])
+    vim.keymap.set({'v', 'i', 't'}, '<C-l>', [[<Cmd>lua require'tmux'.move_right()<CR>]])
 end
+vim.keymap.set({'v', 'n', 'i', 't'}, '<C-S-h>', [[<Cmd>wincmd H<CR>]])
+vim.keymap.set({'v', 'n', 'i', 't'}, '<C-S-j>', [[<Cmd>wincmd J<CR>]])
+vim.keymap.set({'v', 'n', 'i', 't'}, '<C-S-k>', [[<Cmd>wincmd K<CR>]])
+vim.keymap.set({'v', 'n', 'i', 't'}, '<C-S-l>', [[<Cmd>wincmd L<CR>]])
 vim.keymap.set({'v', 'n', 'i', 't'}, '<M-r>', [[<Cmd>wincmd r<CR>]])
 vim.keymap.set({'v', 'n', 'i', 't'}, '<M-x>', [[<Cmd>wincmd x<CR>]])
 vim.keymap.set({'v', 'n', 'i', 't'}, '<M-s>', [[<Cmd>wincmd s<CR>]])
@@ -292,7 +297,7 @@ vim.keymap.set({"v", "n"}, "g<C-o>", "<cmd>vsplit | ClangdSwitchSourceHeader<CR>
 vim.keymap.set({'n'}, '<S-Tab>', '<C-o>')
 -- vim.keymap.set({'i'}, '<C-Space>', '<Space>')
 
-vim.keymap.set({'n', 'v'}, '<C-n>', "<cmd>lua require('nvim-toggler').toggle()<CR>", { silent = true })
+vim.keymap.set({'n', 'v'}, '<C-g>', "<cmd>lua require('nvim-toggler').toggle()<CR>", { silent = true })
 
 -- vim.keymap.set({'v', 'n'}, 'gp', ':GPT<Space>')
 -- vim.keymap.set({'v', 'n'}, 'gP', ':GPT!<Space>')
