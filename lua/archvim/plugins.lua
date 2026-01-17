@@ -384,6 +384,10 @@ local plugins = {
 
     -- terminal and tasks
     {
+        "aserowy/tmux.nvim",
+        config = function() require'archvim/config/tmux' end,
+    },
+    {
         'akinsho/toggleterm.nvim',
         config = function() require'archvim/config/toggleterm' end,
     },
