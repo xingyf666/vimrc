@@ -170,6 +170,9 @@ vim.keymap.set({'i'}, '<M-b>', [[<Cmd>normal! b<CR>]])
 vim.keymap.set({'i'}, '<M-e>', [[<Cmd>normal! e<CR>]])
 vim.keymap.set({'i'}, '<M-w>', [[<Cmd>normal! w<CR>]])
 
+vim.keymap.set({'n', 'i', 'v'}, '<C-LeftMouse>', '<Nop>', { noremap = true, silent = true })
+vim.keymap.set({'n', 'i', 'v'}, '<C-RightMouse>', '<Nop>', { noremap = true, silent = true })
+
 if not pcall(require, 'tmux') then
     vim.keymap.set({'v', 'n', 'i', 't'}, '<C-h>', [[<Cmd>wincmd h<CR>]])
     vim.keymap.set({'v', 'n', 'i', 't'}, '<C-j>', [[<Cmd>wincmd j<CR>]])

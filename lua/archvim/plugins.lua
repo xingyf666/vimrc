@@ -525,7 +525,7 @@ local plugins = {
         config = function() vim.cmd [[
 let g:mdip_imgdir = 'img' " save image in ./img
 let g:mdip_imgname = 'image'
-autocmd FileType markdown nnoremap <silent> mp :call mdip#MarkdownClipboardImage()<CR>
+autocmd FileType markdown nnoremap <silent> <C-v> :call mdip#MarkdownClipboardImage()<CR>
         ]] end,
         ft = { "markdown" },
     },
@@ -535,6 +535,10 @@ autocmd FileType markdown nnoremap <silent> mp :call mdip#MarkdownClipboardImage
     --     run = function() require 'typst-preview'.update() end,
     --     -- ft = { "typst" },
     -- },
+    {
+        '3rd/image.nvim',
+        config = function() require'archvim/config/image-nvim' end,
+    },
 
     -- pinyin input method
     'h-hg/fcitx.nvim',
