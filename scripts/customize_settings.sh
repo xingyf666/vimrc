@@ -4,14 +4,14 @@ echo "-- Configuring ~/.local/share/nvim/archvim/opts.json"
 mkdir -p ~/.local/share/nvim/archvim
 
 YesOrNo() {
-    if [ "x$2" = "xn" ]; then
+    if [ "x$1" = "xn" ]; then
         prompt="是或否，默认选否 [y/N] "
     else
         prompt="是或否，默认选是 [Y/n] "
     fi
     echo -n "$prompt"
     read -n1 answer < /dev/tty || read answer < /dev/tty || answer=$2
-    if [ "x$2" = "xn" ]; then
+    if [ "x$1" = "xn" ]; then
         if [ "x$answer" != "xy" ]; then
             answer=0
         else
