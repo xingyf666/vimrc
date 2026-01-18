@@ -520,15 +520,15 @@ local plugins = {
     --     config = function() vim.cmd [[let g:vim_markdown_math = 1]] end,
     --     ft = { "markdown" },
     -- },
-    {
-        'ferrine/md-img-paste.vim',
-        config = function() vim.cmd [[
-let g:mdip_imgdir = 'img' " save image in ./img
-let g:mdip_imgname = 'image'
-autocmd FileType markdown nnoremap <silent> <C-v> :call mdip#MarkdownClipboardImage()<CR>
-        ]] end,
-        ft = { "markdown" },
-    },
+--     {
+--         'ferrine/md-img-paste.vim',
+--         config = function() vim.cmd [[
+-- let g:mdip_imgdir = 'img' " save image in ./img
+-- let g:mdip_imgname = 'image'
+-- autocmd FileType markdown nnoremap <silent> mp :call mdip#MarkdownClipboardImage()<CR>
+--         ]] end,
+--         ft = { "markdown" },
+--     },
     -- {
     --     'chomosuke/typst-preview.nvim',
     --     tag = 'v0.3.*',
@@ -538,6 +538,10 @@ autocmd FileType markdown nnoremap <silent> <C-v> :call mdip#MarkdownClipboardIm
     {
         '3rd/image.nvim',
         config = function() require'archvim/config/image-nvim' end,
+    },
+    {
+        'TobinPalmer/pastify.nvim',
+        config = function() require'archvim/config/pastify' end,
     },
 
     -- pinyin input method
