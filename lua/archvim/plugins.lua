@@ -233,7 +233,7 @@ local plugins = {
         'nvim-lualine/lualine.nvim',
         config = function() require'archvim/config/lualine' end,
         requires = {
-            -- 'archibate/lualine-time',
+            'archibate/lualine-time',
             -- 'archibate/lualine-lsp-progress',
         },
     },
@@ -541,7 +541,7 @@ local plugins = {
     },
     {
         'TobinPalmer/pastify.nvim',
-        config = function() require'archvim/config/pastify' end,
+        config = function() require'archvim/config/pastify-nvim' end,
     },
 
     -- pinyin input method
