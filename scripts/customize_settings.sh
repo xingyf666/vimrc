@@ -124,6 +124,15 @@ YesOrNo y
 SetConfig enable_clipboard $?
 
 cat << EOF
+==================================================================
+Would you like to use NeoVim in Kitty with image display support?
+您是否希望在 Kitty 中的 NeoVim 支持图片显示？
+==================================================================
+EOF
+YesOrNo n
+SetConfig enable_kitty $?
+
+cat << EOF
 --
 -- You may always change these settings later by re-running this script.
 -- 您以后可以随时重新运行本脚本以修改这些上述设置。

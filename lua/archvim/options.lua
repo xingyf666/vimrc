@@ -61,6 +61,7 @@ local default_opts = {
     enable_signature_help = false,
     enable_inlay_hint = true,
     enable_clipboard = true,
+    enable_kitty = false,
 }
 
 (function()
