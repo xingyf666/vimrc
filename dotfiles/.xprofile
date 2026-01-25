@@ -1,0 +1,8 @@
+export GTK_IM_MODULE=fcitx
+export GLFW_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
+export QT_SCALE_FACTOR=2
+export GDK_SCALE=2
+export TERMINAL=wezterm
+export EDITOR=nvim
