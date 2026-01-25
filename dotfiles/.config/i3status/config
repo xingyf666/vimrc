@@ -38,8 +38,6 @@ order += "volume master"
 
 memory {
         format = "<span foreground='#00BFFF'></span> <span foreground='#00BFFF'>%percentage_used</span>"
-        threshold_degraded = "1G"
-        format_degraded = "<span foreground='#FF6B6B'>MEMORY</span> < <span foreground='#FF6B6B'>%available</span>"
 }
 
 load {
