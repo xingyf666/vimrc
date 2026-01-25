@@ -88,8 +88,7 @@ detect_arch() {
 }
 
 pcall() {
-    "$@"
-    echo -- ERROR: failed to install: "$@"
+    "$@" || echo -- ERROR: failed to install: "$@"
 }
 
 ensure_pip() {

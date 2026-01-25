@@ -8,7 +8,16 @@ require("mason").setup({
     }
 })
 
+local lsp_list = { "clangd", "pyright", "lua_ls" }
+
 require("mason-lspconfig").setup {
-    -- ensure_installed = { "clangd", "pyright", "lua_ls" },
-    -- automatic_installation = true,
+    ensure_installed = lsp_list,
+    automatic_installation = true,
+    automatic_enable = true,
 }
+
+vim.lsp.config("*", {
+    capabilities = vim.lsp.protocol.make_client_capabilities()
+})
+
+vim.lsp.enable(lsp_list)
