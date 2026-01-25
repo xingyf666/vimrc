@@ -5,3 +5,4 @@ font pango:JetBrainsMono Nerd Font Mono Medium 12
 include bindings
 include appearances
 include autostart
+include gaps

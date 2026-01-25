@@ -125,8 +125,8 @@ SetConfig enable_clipboard $?
 
 cat << EOF
 ==================================================================
-Would you like to use NeoVim in Kitty with image display support?
-您是否希望在 Kitty 中的 NeoVim 支持图片显示？
+Are you using Kitty and wish enable image display support?
+您是否使用 Kitty 终端，并希望 NeoVim 支持图片显示？
 ==================================================================
 EOF
 YesOrNo n
