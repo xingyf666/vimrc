@@ -5,7 +5,10 @@ if wezterm.config_builder then
 end
 
 config.font = wezterm.font('JetBrainsMono Nerd Font')
-config.font_size = 22.0
+config.font_size = 12.0
+
+config.cursor_blink_rate = 0
+config.default_cursor_style = 'SteadyBlock'
 
 if false then
     config.color_scheme = 'Tokyo Night'
