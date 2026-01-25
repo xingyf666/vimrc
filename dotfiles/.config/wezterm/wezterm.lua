@@ -10,6 +10,8 @@ config.font_size = 12.0
 config.cursor_blink_rate = 0
 config.default_cursor_style = 'SteadyBlock'
 
+config.window_background_opacity = 0.6
+
 if false then
     config.color_scheme = 'Tokyo Night'
 else

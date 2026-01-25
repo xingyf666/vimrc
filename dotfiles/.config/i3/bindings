@@ -7,6 +7,12 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioStop exec playerctl stop
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -29,7 +35,8 @@ bindsym $mod+q kill
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindsym $mod+x exec --no-startup-id i3-dmenu-desktop
 # bindsym $mod+x exec --no-startup-id rofi -show combi -run-command "i3-msg exec '{cmd}'" -show-icons
-bindsym $mod+x exec --no-startup-id rofi -show drun -sort -run-command "i3-msg exec '{cmd}'" -show-icons
+bindsym $mod+space exec --no-startup-id "rofi -show drun"
+bindsym $mod+x exec --no-startup-id "rofi -show window"
 
 # change focus
 bindsym $mod+h focus left
@@ -56,10 +63,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+a split h
+bindsym $mod+b split h
 
 # split in vertical orientation
-bindsym $mod+z split v
+bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -70,7 +77,7 @@ bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+w floating toggle
+bindsym $mod+w floating toggle ; [floating] resize set 1720 1200 ; move position center
 
 # change focus between tiling / floating windows
 bindsym $mod+m focus mode_toggle
@@ -91,6 +98,9 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+
+# assign [class="(?i)virtual"] $ws10
+# for_window [class="(?i)virtual"] focus
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -119,12 +129,16 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+bindsym $mod+minus move scratchpad
+bindsym $mod+plus scratchpad show
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "rofi -show power-menu"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

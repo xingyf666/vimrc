@@ -1,11 +1,12 @@
 configuration {
-/*	modes: "window,drun,run,ssh";*/
-/*	font: "mono 12";*/
+    modi: "window,windowcd,drun,run,ssh,combi,keys,filebrowser,recursivebrowser,power-menu:~/.config/rofi/rofi-power-menu/rofi-power-menu";
+    font: "JetBrainsMono Nerd Font Mono Medium 22";
+    combi-modi: "window,drun,ssh,keys";
 /*	location: 0;*/
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
-/*	show-icons: false;*/
+    show-icons: true;
 /*	preview-cmd: ;*/
 /*	on-selection-changed: ;*/
 /*	on-mode-changed: ;*/
@@ -30,8 +31,8 @@ configuration {
 /*	drun-url-launcher: "xdg-open";*/
 /*	disable-history: false;*/
 /*	ignored-prefixes: "";*/
-/*	sort: false;*/
-/*	sorting-method: "normal";*/
+    sort: true;
+    sorting-method: "normal";
 /*	case-sensitive: false;*/
 /*	case-smart: false;*/
 /*	cycle: true;*/
@@ -167,3 +168,5 @@ configuration {
       sorting-method:    "name";
   }
 }
+
+@theme "squared-nord-hidpi"
