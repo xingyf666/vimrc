@@ -92,7 +92,7 @@ bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+w floating toggle ; [floating] resize set 1720 1200 ; move position center
+bindsym $mod+w floating toggle ; [floating] resize set 1720 1200 ; [floating] move position center
 
 # change focus between tiling / floating windows
 bindsym $mod+m focus mode_toggle
@@ -163,7 +163,7 @@ bindsym $mod+Shift+n exec "nitrogen"
 bindsym $mod+b exec "chromium"
 bindsym $mod+o exec "thunar"
 
-bindsym $mod+Shift+i exec "xdotool getwindowfocus getwindowclassname"
+bindsym $mod+Shift+i exec --no-startup-id ~/.config/i3/inspect_xwindow.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

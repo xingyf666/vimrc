@@ -139,7 +139,7 @@ function show_music_notif {
         get_album_art
     fi
 
-    dunstify -a "Volume" -r 234560 -t $notification_timeout -h string:x-dunst-stack-tag:music_notif -i "$album_art" "$song_title" "$song_artist - $song_album"
+    dunstify -a "Music" -r 234560 -t $notification_timeout -h string:x-dunst-stack-tag:music_notif -i "$album_art" "$song_title" "$song_artist - $song_album"
 }
 
 # Displays a brightness notification using dunstify
@@ -147,7 +147,7 @@ function show_brightness_notif {
     brightness=$(get_brightness)
     echo $brightness
     get_brightness_icon
-    dunstify -a "Volume" -r 234560 -t $notification_timeout -h string:x-dunst-stack-tag:brightness_notif -h int:value:$brightness -i "$brightness_icon" "$brightness%"
+    dunstify -a "Brightness" -r 234560 -t $notification_timeout -h string:x-dunst-stack-tag:brightness_notif -h int:value:$brightness -i "$brightness_icon" "$brightness%"
 }
 
 # Main function - Takes user input, "volume_up", "volume_down", "brightness_up", or "brightness_down"
@@ -179,7 +179,7 @@ case $1 in
     brightness_up)
     # Increases brightness and displays the notification
     if ! command -v xbacklight &> /dev/null; then
-        dunstify -a "Volume" -r 234560 -t $notification_timeout "Error" "xbacklight not found"
+        dunstify -a "Brightness" -r 234560 -t $notification_timeout "Error" "xbacklight not found"
         exit 1
     fi
     
@@ -190,7 +190,7 @@ case $1 in
     brightness_down)
     # Decreases brightness and displays the notification
     if ! command -v xbacklight &> /dev/null; then
-        dunstify -a "Volume" -r 234560 -t $notification_timeout "Error" "xbacklight not found"
+        dunstify -a "Brightness" -r 234560 -t $notification_timeout "Error" "xbacklight not found"
         exit 1
     fi
     
@@ -201,7 +201,7 @@ case $1 in
     next_track)
     # Skips to the next song and displays the notification
     if ! command -v playerctl &> /dev/null; then
-        dunstify -a "Volume" -r 234560 -t $notification_timeout "Error" "playerctl not found"
+        dunstify -a "Music" -r 234560 -t $notification_timeout "Error" "playerctl not found"
         exit 1
     fi
     playerctl next
@@ -211,7 +211,7 @@ case $1 in
     prev_track)
     # Skips to the previous song and displays the notification
     if ! command -v playerctl &> /dev/null; then
-        dunstify -a "Volume" -r 234560 -t $notification_timeout "Error" "playerctl not found"
+        dunstify -a "Music" -r 234560 -t $notification_timeout "Error" "playerctl not found"
         exit 1
     fi
     playerctl previous
@@ -220,7 +220,7 @@ case $1 in
 
     play_pause)
     if ! command -v playerctl &> /dev/null; then
-        dunstify -a "Volume" -r 234560 -t $notification_timeout "Error" "playerctl not found"
+        dunstify -a "Music" -r 234560 -t $notification_timeout "Error" "playerctl not found"
         exit 1
     fi
     playerctl play-pause
