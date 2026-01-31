@@ -3,3 +3,4 @@
 /.build_cache
 /a.out
 __pycache__/
+*.backup.*

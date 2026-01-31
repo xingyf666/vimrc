@@ -36,6 +36,13 @@ autocmd SwapExists * let v:swapchoice = "e"
 augroup end
 ]]
 
+vim.cmd [[
+augroup check_file_updated
+autocmd!
+autocmd FocusGained,BufEnter * :checktime
+augroup end
+]]
+
 -- vim.cmd [[
 -- augroup neogit_setlocal
 -- autocmd!

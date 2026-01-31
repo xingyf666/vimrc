@@ -1,8 +1,8 @@
 indicator: bottomright
-indicator_color: #ffffff
+indicator_color: #9ece6a
 indicator_size: 22
 
-cursor_color: #ff8800
+cursor_color: #7aa2f7
 cursor_size: 22
 
 hint_chars: abcdefghijklmnopqrstuvwxyz
@@ -10,12 +10,12 @@ hint_font: JetBrainsMono Nerd Font
 hint_border_radius: 5
 hint_size: 20
 
-grid_color: #1c1c1e
-grid_border_color: #1c1c1e
+grid_color: #1a1b26
+grid_border_color: #a9b1d6
 grid_size: 2
 grid_border_size: 3
-hint_bgcolor: #1c1c1e
-hint_fgcolor: #a1aba7
+hint_bgcolor: #1a1b26
+hint_fgcolor: #9ece6a
 
 acceleration: 2500
 speed: 200
