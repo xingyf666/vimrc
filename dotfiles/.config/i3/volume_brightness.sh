@@ -49,6 +49,14 @@ function get_brightness {
     echo "0"
 }
 
+function urldecode {
+    if command -v python3 &> /dev/null; then
+        python3 -c "import sys, urllib.parse; print(urllib.parse.unquote(sys.argv[1]))" "$1"
+    else
+        echo "$1"
+    fi
+}
+
 # Returns a mute icon, a volume-low icon, or a volume-high icon, depending on the volume
 function get_volume_icon {
     volume=$(get_volume)
@@ -75,7 +83,7 @@ function get_album_art {
     
     url=$(playerctl -f "{{mpris:artUrl}}" metadata 2>/dev/null || true)
     if [[ $url == "file://"* ]]; then
-        album_art="${url/file:\/\//}"
+        album_art=$(urldecode "${url/file:\/\//}")
     elif [[ $url == "http://"* ]] && [[ $download_album_art == "true" ]]; then
         # Identify filename from URL
         filename="$(echo $url | sed "s/.*\///")"

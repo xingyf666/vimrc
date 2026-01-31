@@ -3,19 +3,22 @@
 sudo pacman -S i3-wm i3status
 sudo pacman -S lxappearance
 sudo pacman -S flameshot
-sudo pacman -S feh nitrogen
+sudo pacman -S feh
 sudo pacman -S thunar
 sudo pacman -S kitty wezterm alacritty
 sudo pacman -S adwaita-icon-theme adwaita-cursor
 sudo pacman -S fcitx5 fcitx5-configtool fcitx5-rime
 sudo pacman -S pulseaudio
 sudo pacman -S mplayer vlc
+sudo pacman -S playerctl
 sudo pacman -S picom
 sudo pacman -S nerd-fonts
 sudo pacman -S tmux
 sudo pacman -S yazi lazygit
-sudo pacman -S warpd
+sudo pacman -S fish fisher
 sudo pacman -S dunst
+paru -S warpd
+paru -S nitrogen
 
 # https://github.com/Reverier-Xu/Ori-fcitx5
 paru -S fcitx5-skin-ori-git
