@@ -33,8 +33,10 @@ if vim.g.vscode then
 end
 
 vim.cmd [[
-silent! colorscheme zephyr
+" silent! colorscheme zephyr
+" silent! colorscheme nord
 " silent! colorscheme gruvbox
+silent! colorscheme tokyonight
 ]]
 
 -- More custom options goes here

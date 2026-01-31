@@ -42,4 +42,7 @@ cp -r /tmp/rofi-themes-collection/themes/templates ~/.local/share/rofi/themes/
 # mkdir -p ~/.config/alacritty/themes
 # cp -r /tmp/alacritty-theme/themes/*.toml ~/.config/alacritty/themes
 
+# fish configurations
+fisher install PatrickF1/fzf.fish
+
 ```

@@ -207,6 +207,7 @@ local plugins = {
     --     'AlphaTechnolog/pywal.nvim',
     --     as = 'pywal',
     -- },
+    "folke/tokyonight.nvim",
     'glepnir/zephyr-nvim',
     'shaunsingh/nord.nvim',
     -- 'tikhomirov/vim-glsl',

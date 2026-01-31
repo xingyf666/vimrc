@@ -9,12 +9,6 @@ download_album_art=true
 show_album_art=true
 show_music_in_volume_indicator=true
 
-# Check for required commands
-if ! command -v playerctl &> /dev/null; then
-    show_music_in_volume_indicator=false
-    show_album_art=false
-fi
-
 # Brightness control requires xbacklight
 
 # Uses regex to get volume from pactl

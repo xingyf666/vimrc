@@ -485,9 +485,10 @@ $ ls -A dotfiles
 ## 配色方案
 
 ```vim
-:colorscheme zephyr  " 默认
+:colorscheme zephyr
 :colorscheme gruvbox
 :colorscheme nord
+:colorscheme tokyonight  " 默认
 ```
 
 ## 以下为写给小彭老师自己看的
