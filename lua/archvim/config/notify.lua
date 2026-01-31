@@ -29,6 +29,9 @@ vim.notify = function(msg, ...)
     if msg:match("\"lsp_signatur handler\",") then
         return
     end
+    if msg:match("no notification handler registered for \"NVIM_MCP\"") then
+        return
+    end
     if msg:match("No results for %*%*") then
         -- transform "No results for **qflist**\nBuffer: /home/bate/Codes/cppguidebook/examples/error_code.cpp"
         -- into "No results for **qflist**"

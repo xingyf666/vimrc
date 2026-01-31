@@ -1,0 +1,4 @@
+Xfce4-terminal
+kitty
+org.wezfurlong.wezterm
+Alacritty

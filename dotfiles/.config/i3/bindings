@@ -8,10 +8,15 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86AudioStop exec playerctl stop
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86AudioStop exec --no-startup-id playerctl stop
+
+# Copy-and-paste shortcuts
+bindsym --release $mod+c exec --no-startup-id ~/.config/i3/clipboard_operation.py copy
+bindsym --release $mod+x exec --no-startup-id ~/.config/i3/clipboard_operation.py cut
+bindsym --release $mod+v exec --no-startup-id ~/.config/i3/clipboard_operation.py paste
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -33,10 +38,11 @@ bindsym $mod+q kill
 # bindsym $mod+d exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
-# bindsym $mod+x exec --no-startup-id i3-dmenu-desktop
-# bindsym $mod+x exec --no-startup-id rofi -show combi -run-command "i3-msg exec '{cmd}'" -show-icons
+# bindsym $mod+space exec --no-startup-id i3-dmenu-desktop
+# bindsym $mod+space exec --no-startup-id rofi -show combi -run-command "i3-msg exec '{cmd}'" -show-icons
 bindsym $mod+space exec --no-startup-id "rofi -show drun"
-bindsym $mod+x exec --no-startup-id "rofi -show window"
+bindsym $mod+shift+w exec --no-startup-id "rofi -show window"
+bindsym $mod+shift+f exec --no-startup-id "rofi -show filebrowser"
 
 # change focus
 bindsym $mod+h focus left
@@ -62,17 +68,17 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+b split h
+# split in horizontal (like :split in Vim)
+bindsym $mod+s split v
 
-# split in vertical orientation
-bindsym $mod+v split v
+# split in vertical (like :vsplit in Vim)
+bindsym $mod+shift+s split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+bindsym $mod+shift+t layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -82,9 +88,13 @@ bindsym $mod+w floating toggle ; [floating] resize set 1720 1200 ; move position
 # change focus between tiling / floating windows
 bindsym $mod+m focus mode_toggle
 
+# change focus between parent and child
+bindsym $mod+u focus parent
+bindsym $mod+shift+u focus child
+
 # focus the parent container
-bindsym $mod+p focus parent
-bindsym $mod+n focus child
+bindsym $mod+p focus prev
+bindsym $mod+n focus next
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -169,3 +179,6 @@ bindsym $mod+r mode "resize"
 
 bindsym Print       exec flameshot full
 bindsym Shift+Print exec flameshot gui
+
+# exec_always --no-startup-id ~/.config/i3/i3-cycle-focus.py --history 2
+# bindsym $mod+Tab exec --no-startup-id ~/.config/i3/i3-cycle-focus.py --switch

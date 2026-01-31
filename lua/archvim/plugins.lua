@@ -444,6 +444,11 @@ local plugins = {
         },
         config = function () require"archvim/config/opencode" end,
     },
+    {
+        "linw1995/nvim-mcp",
+        config = function () require"nvim-mcp".setup() end,
+        -- run = "cargo install --path .",
+    },
     -- {
     --     os.getenv('ARCHIBATE_COMPUTER') and '/home/bate/Codes/nvim-gpt' or 'archibate/nvim-gpt',
     --     requires = { 'nvim-telescope/telescope.nvim' },
