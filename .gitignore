@@ -2,3 +2,4 @@
 /pack
 /.build_cache
 /a.out
+__pycache__/
