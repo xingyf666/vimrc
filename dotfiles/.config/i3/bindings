@@ -78,7 +78,7 @@ bindsym $mod+shift+s split h
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+shift+t layout stacking
+bindsym $mod+a layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -179,6 +179,3 @@ bindsym $mod+r mode "resize"
 
 bindsym Print       exec flameshot full
 bindsym Shift+Print exec flameshot gui
-
-# exec_always --no-startup-id ~/.config/i3/i3-cycle-focus.py --history 2
-# bindsym $mod+Tab exec --no-startup-id ~/.config/i3/i3-cycle-focus.py --switch

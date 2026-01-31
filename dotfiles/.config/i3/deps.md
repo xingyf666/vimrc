@@ -10,7 +10,7 @@ sudo pacman -S kitty wezterm alacritty
 sudo pacman -S picom
 sudo pacman -S nerd-fonts
 sudo pacman -S tmux
-sudo pacman -S yazi
+sudo pacman -S yazi lazygit
 
 # https://github.com/Reverier-Xu/Ori-fcitx5
 paru -S fcitx5-skin-ori-git

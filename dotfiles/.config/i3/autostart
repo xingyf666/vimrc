@@ -9,3 +9,6 @@ exec --no-startup-id picom -b
 exec --no-startup-id fcitx5
 exec --no-startup-id flameshot
 exec --no-startup-id ~/esp/clash-verge_1.5.11_amd64.AppImage
+
+exec --no-startup-id keynav
+exec_always --no-startup-id killall -SIGUSR1 keynav

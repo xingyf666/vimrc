@@ -4,15 +4,29 @@ if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
-config.font = wezterm.font('JetBrainsMono Nerd Font')
-config.font_size = 12.0
+config.automatically_reload_config = true
+
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+    config.initial_cols = 160
+    config.initial_rows = 40
+    config.font_size = 12.0
+else
+    config.initial_cols = 80
+    config.initial_rows = 24
+    config.font_size = 12.0
+end
+
+config.window_background_opacity = 1.0
+
+config.font = wezterm.font_with_fallback{
+    'JetBrainsMono Nerd Font',
+    'monospace'
+}
 
 config.cursor_blink_rate = 0
 config.default_cursor_style = 'SteadyBlock'
 
-config.window_background_opacity = 0.6
-
-if false then
+if true then
     config.color_scheme = 'Tokyo Night'
 else
     config.color_scheme = 'Midsummer Night'
@@ -57,13 +71,26 @@ else
     }
 end
 
-config.window_background_opacity = 1.0
 config.scrollback_lines = 2000
 config.enable_scroll_bar = false
+config.min_scroll_bar_height = '2cell'
+
 config.hide_tab_bar_if_only_one_tab = true
 config.exit_behavior = 'Close'
+config.window_close_confirmation = 'NeverPrompt'
 
-config.initial_cols = 80
-config.initial_rows = 24
+local ssh_domains = {}
+for host, _ in pairs(wezterm.enumerate_ssh_hosts()) do
+    table.insert(ssh_domains, {
+        name = host,
+        remote_address = host,
+        assume_shell = 'Posix',
+    })
+end
+config.ssh_domains = ssh_domains
+
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+    config.default_gui_startup_args = { 'connect', 'MDD' }
+end
 
 return config
