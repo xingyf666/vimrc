@@ -195,3 +195,5 @@ bindsym $mod+r mode "resize"
 
 bindsym Print       exec flameshot full
 bindsym Shift+Print exec flameshot gui
+
+bindsym $mod+semicolon exec --no-startup-id warpd --hint

@@ -17,11 +17,18 @@ grid_border_size: 3
 hint_bgcolor: #1a1b26
 hint_fgcolor: #9ece6a
 
-acceleration: 2500
+accelerator_acceleration: 10000
+acceleration: 1400
 speed: 200
-max_speed: 3000
+max_speed: 3400
+decelerator_speed: 150
 
-scroll_speed: 200
-scroll_max_speed: 8000
-scroll_acceleration: 1500
-scroll_deceleration: -3500
+scroll_speed: 300
+scroll_max_speed: 3000
+scroll_acceleration: 900
+scroll_deceleration: -3000
+
+exit: esc M-;
+hint_exit: esc M-;
+
+repeat_interval: 220
