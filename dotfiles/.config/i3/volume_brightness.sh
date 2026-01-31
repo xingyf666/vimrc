@@ -15,12 +15,7 @@ if ! command -v playerctl &> /dev/null; then
     show_album_art=false
 fi
 
-# Determine brightness control method - always use xbacklight
-if command -v xbacklight &> /dev/null; then
-    brightness_cmd="xbacklight"
-else
-    brightness_cmd=""
-fi
+# Brightness control requires xbacklight
 
 # Uses regex to get volume from pactl
 function get_volume {
@@ -34,18 +29,13 @@ function get_mute {
 
 # Uses regex to get brightness from xbacklight
 function get_brightness {
-    if [[ -z "$brightness_cmd" ]]; then
+    if ! command -v xbacklight &> /dev/null; then
         echo "0"
         return
     fi
     
     local raw brightness
-    if [[ "$brightness_cmd" == "xbacklight" ]]; then
-        raw=$(xbacklight -get 2>/dev/null)
-    else
-        echo "0"
-        return
-    fi
+    raw=$(xbacklight -get 2>/dev/null)
     
     # Extract integer percentage
     if [[ -n "$raw" ]]; then
@@ -188,8 +178,8 @@ case $1 in
 
     brightness_up)
     # Increases brightness and displays the notification
-    if [[ -z "$brightness_cmd" ]]; then
-        dunstify -a "Volume" -r 234560 -t $notification_timeout "Error" "No brightness control tool found"
+    if ! command -v xbacklight &> /dev/null; then
+        dunstify -a "Volume" -r 234560 -t $notification_timeout "Error" "xbacklight not found"
         exit 1
     fi
     
@@ -199,8 +189,8 @@ case $1 in
 
     brightness_down)
     # Decreases brightness and displays the notification
-    if [[ -z "$brightness_cmd" ]]; then
-        dunstify -a "Volume" -r 234560 -t $notification_timeout "Error" "No brightness control tool found"
+    if ! command -v xbacklight &> /dev/null; then
+        dunstify -a "Volume" -r 234560 -t $notification_timeout "Error" "xbacklight not found"
         exit 1
     fi
     

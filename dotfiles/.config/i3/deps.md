@@ -6,6 +6,7 @@ sudo pacman -S flameshot
 sudo pacman -S feh nitrogen
 sudo pacman -S thunar
 sudo pacman -S kitty wezterm alacritty
+sudo pacman -S adwaita-icon-theme adwaita-cursor
 sudo pacman -S fcitx5 fcitx5-configtool fcitx5-rime
 sudo pacman -S pulseaudio
 sudo pacman -S mplayer vlc

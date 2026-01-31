@@ -29,7 +29,7 @@ vim.notify = function(msg, ...)
     if msg:match("\"lsp_signatur handler\",") then
         return
     end
-    if msg:match("no notification handler registered for \"NVIM_MCP.*\"") then
+    if msg:match("no notification handler registered for") then
         return
     end
     if msg:match("No results for %*%*") then
