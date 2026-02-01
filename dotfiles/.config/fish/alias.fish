@@ -33,3 +33,7 @@ alias g='git'
 alias p='python'
 alias b='$EDITOR'
 alias v='$PAGER'
+
+alias t='projectdo test'
+alias r='projectdo run'
+alias m='projectdo build'
