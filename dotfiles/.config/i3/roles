@@ -3,6 +3,7 @@
 for_window [class="^Nitrogen$"] floating enable
 
 for_window [class="^Lxappearance$"] floating enable
+for_window [class="^Xfce4-settings-editor$"] floating enable
 
 for_window [floating] resize set 1720 1200
 for_window [floating] move position center

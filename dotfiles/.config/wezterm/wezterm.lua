@@ -20,6 +20,7 @@ config.window_background_opacity = 0.8
 
 config.font = wezterm.font_with_fallback{
     'JetBrainsMono Nerd Font',
+    'Noto Sans CJK SC',
     'monospace'
 }
 
