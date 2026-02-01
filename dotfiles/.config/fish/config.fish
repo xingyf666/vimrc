@@ -7,7 +7,7 @@ if status is-interactive
         direnv hook fish | source
     end
     if command -sq atuin
-        atuin init fish | source
+        atuin init fish --disable-up-arrow | source
     end
 
     function fish_greeting
