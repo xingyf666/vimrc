@@ -3,7 +3,12 @@ if status is-interactive
     fish_add_path ~/.local/bin
     fish_add_path ~/.cargo/bin
 
-    direnv hook fish | source
+    if command -sq direnv
+        direnv hook fish | source
+    end
+    if command -sq atuin
+        atuin init fish | source
+    end
 
     function fish_greeting
         echo "
