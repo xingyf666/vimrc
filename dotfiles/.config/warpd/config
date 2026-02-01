@@ -32,3 +32,6 @@ exit: esc M-;
 hint_exit: esc M-;
 
 repeat_interval: 220
+
+buttons: m , .
+oneshot_buttons: space b n

@@ -1,5 +1,12 @@
-fisher install jethrokuan/z
-fisher install pure-fish/pure
-fisher install vitallium/tokyonight-fish
-fisher install PatrickF1/fzf.fish
-fisher install acomagu/fish-async-prompt
+patrickf1/fzf.fish
+vitallium/tokyonight-fish
+pure-fish/pure
+jethrokuan/z
+acomagu/fish-async-prompt
+jorgebucaran/autopair.fish
+jorgebucaran/replay.fish
+gazorby/fish-abbreviation-tips
+meaningful-ooo/sponge
+paldepind/projectdo
+mattmc3/magic-enter.fish
+franciscolourenco/done
