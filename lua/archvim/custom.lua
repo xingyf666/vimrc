@@ -37,7 +37,8 @@ vim.cmd [[
 " silent! colorscheme zephyr
 " silent! colorscheme nord
 " silent! colorscheme gruvbox
-silent! colorscheme tokyonight
+" silent! colorscheme tokyonight
+silent! colorscheme catppuccin-macchiato
 ]]
 
 -- More custom options goes here

@@ -74,4 +74,5 @@ vim.keymap.set("n", "<leader>q", "<cmd>Telescope quickfix<CR>")
 -- 查看所有 Vim 通知
 vim.keymap.set("n", "<leader>n", "<cmd>Telescope notify<CR>")
 -- 模糊查询
-vim.keymap.set({"v", "n"}, "<leader><leader>", "<cmd>FzfLua<CR>", { silent = true, desc = "Fuzzy Find" })
+-- vim.keymap.set({"v", "n"}, "<leader><leader>", "<cmd>FzfLua<CR>", { silent = true, desc = "Fuzzy Find" })
+vim.keymap.set({"v", "n"}, "<leader><leader>", "<cmd>Telescope resume<CR>")

@@ -219,6 +219,10 @@ local plugins = {
     "folke/tokyonight.nvim",
     'glepnir/zephyr-nvim',
     'shaunsingh/nord.nvim',
+    {
+        "catppuccin/nvim",
+        as = "catppuccin",
+    },
     -- 'tikhomirov/vim-glsl',
 
     -- git support

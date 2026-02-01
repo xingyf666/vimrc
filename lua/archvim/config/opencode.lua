@@ -40,8 +40,6 @@ elseif pcall(require, 'snacks') then
     enabled_provider = "snacks"
 end
 
-vim.notify(enabled_provider)
-
 vim.g.opencode_opts = {
     provider = {
         enabled = enabled_provider,

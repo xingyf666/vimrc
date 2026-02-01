@@ -196,7 +196,7 @@ curl -SLf https://142857.red/files/nvimrc-install.sh | bash
 
 - `,a` 所有静态检查错误
 - `,q` 所有编译器报错
-- `,,` 多功能模糊查找
+- `,,` 复刻上一次查找
 
 **选择**
 
@@ -488,7 +488,8 @@ $ ls -A dotfiles
 :colorscheme zephyr
 :colorscheme gruvbox
 :colorscheme nord
-:colorscheme tokyonight  " 默认
+:colorscheme tokyonight
+:colorscheme catppuccin-macchiato  " 默认
 ```
 
 ## 以下为写给小彭老师自己看的

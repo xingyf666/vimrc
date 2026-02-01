@@ -27,6 +27,7 @@ sudo pacman -S direnv
 paru -S warpd
 paru -S nitrogen
 paru -S nvimpager
+paru -S projectdo
 
 # https://github.com/Reverier-Xu/Ori-fcitx5
 paru -S fcitx5-skin-ori-git
@@ -50,7 +51,5 @@ cp -r /tmp/rofi-themes-collection/themes/templates ~/.local/share/rofi/themes/
 # mkdir -p ~/.config/alacritty/themes
 # cp -r /tmp/alacritty-theme/themes/*.toml ~/.config/alacritty/themes
 
-# fish configurations
-fisher install PatrickF1/fzf.fish
-
+# fonts: https://github.com/lxgw/kose-font/releases
 ```
