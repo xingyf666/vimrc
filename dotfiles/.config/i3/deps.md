@@ -25,6 +25,7 @@ sudo pacman -S nodejs npm
 sudo pacman -S neovim python-pynvim
 sudo pacman -S direnv
 sudo pacman -S atuin
+paru -S i3lock-color
 paru -S warpd
 paru -S nitrogen
 paru -S nvimpager
