@@ -222,6 +222,7 @@ local plugins = {
     {
         "catppuccin/nvim",
         as = "catppuccin",
+        config = function() require'archvim/config/catppuccin' end,
     },
     -- 'tikhomirov/vim-glsl',
 
@@ -230,6 +231,7 @@ local plugins = {
         'lewis6991/gitsigns.nvim',
         config = function() require'archvim/config/gitsigns' end,
     },
+    "sindrets/diffview.nvim",
     -- 'tpope/vim-fugitive',
     {
         "NeogitOrg/neogit",
