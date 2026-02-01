@@ -132,6 +132,7 @@ if [[ ! -o interactive ]]; then
 fi
 
 export FZF_COMPLETION_TRIGGER='**'
+export FZF_DEFAULT_COMMAND='fd --type f'
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh

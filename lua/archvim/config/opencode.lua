@@ -1,7 +1,3 @@
-vim.g.opencode_opts = {
-  -- Your configuration, if any — see `lua/opencode/config.lua`, or "goto definition".
-}
-
 -- Required for `opts.events.reload`.
 vim.o.autoread = true
 
@@ -35,8 +31,19 @@ vim.keymap.set("n", "<C-]><C-d>", function() require("opencode").command("sessio
 --   end,
 -- })
 
+local enabled_provider = "terminal"
+if os.getenv('TMUX') then
+    enabled_provider = "tmux"
+elseif os.getenv('KITTY_PID') then
+    enabled_provider = "kitty"
+elseif pcall(require, 'snacks') then
+    enabled_provider = "snacks"
+end
+
+vim.notify(enabled_provider)
+
 vim.g.opencode_opts = {
-  provider = {
-    enabled = os.getenv('TMUX') and "tmux" or "terminal",
-  }
+    provider = {
+        enabled = enabled_provider,
+    }
 }

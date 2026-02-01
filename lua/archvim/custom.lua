@@ -25,6 +25,7 @@ end
 if not require'archvim.options'.enable_clipboard then
     vim.cmd [[
         set clipboard-=unnamedplus
+        set clipboard-=unnamed
     ]]
 end
 

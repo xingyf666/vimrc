@@ -13,7 +13,7 @@ set cinoptions=j1,(0,ws,Ws,g0,:0,=0,l1
 set cinwords=if,else,switch,case,for,while,do
 set showbreak=↪
 set list
-set clipboard+=unnamedplus
+" set clipboard+=unnamedplus
 set switchbuf=useopen
 set exrc
 set foldtext='+--'
@@ -84,6 +84,8 @@ local default_opts = {
         end
     end
 end)()
+
+vim.opt.clipboard:append { 'unnamed', 'unnamedplus' }
 
 return setmetatable({}, {
     __newindex = function (_, k, v)

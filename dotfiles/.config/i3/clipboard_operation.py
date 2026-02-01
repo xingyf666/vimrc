@@ -71,18 +71,15 @@ if __name__ == "__main__":
             xkbd.copy_keys(use_terminal_keys=True)
         else:
             xkbd.copy_keys(use_terminal_keys=False)
-        xkbd.press_cmd_l()
     elif operation == "cut":
         xkbd.release_cmd_l()
         xkbd.cut_keys()
-        xkbd.press_cmd_l()
     elif operation == "paste":
         xkbd.release_cmd_l()
         if use_terminal_keys:
             xkbd.paste_keys(use_terminal_keys=True)
         else:
             xkbd.paste_keys(use_terminal_keys=False)
-        xkbd.press_cmd_l()
     else:
         print("Unknown operation:", operation)
         sys.exit(1)
