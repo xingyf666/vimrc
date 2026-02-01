@@ -6,3 +6,4 @@ export GLFW_IM_MODULE=ibus
 # export GDK_SCALE=2
 export TERMINAL=kitty
 export EDITOR=nvim
+export PAGER=nvimpager

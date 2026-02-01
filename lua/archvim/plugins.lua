@@ -8,6 +8,10 @@ local plugins = {
         config = function() require'archvim/config/notify' end,
     },
     {
+        "folke/snacks.nvim",
+        config = function() require'archvim/config/snacks' end,
+    },
+    {
         'nvim-tree/nvim-web-devicons',
         -- config = function()
         --     if require'archvim.options'.nerd_fonts then
@@ -197,6 +201,11 @@ local plugins = {
     --     "SmiteshP/nvim-navic",
     --     requires = 'nvim-treesitter/nvim-treesitter',
     -- },
+    {
+        "tzachar/local-highlight.nvim",
+        config = function() require"archvim/config/local-highlight" end,
+        -- requires = { "folke/snacks.nvim" },
+    },
 
     -- color and themes
     {
@@ -437,17 +446,17 @@ local plugins = {
     -- neo-pioneering
     {
         "NickvanDyke/opencode.nvim",
-        dependencies = {
-            -- Recommended for `ask()` and `select()`.
-            -- Required for `snacks` provider.
-            ---@module 'snacks' <- Loads `snacks.nvim` types for configuration intellisense.
-            { "folke/snacks.nvim", opts = { input = {}, picker = {}, terminal = {} } },
-        },
+        -- requires = {
+        --     -- Recommended for `ask()` and `select()`.
+        --     -- Required for `snacks` provider.
+        --     ---@module 'snacks' <- Loads `snacks.nvim` types for configuration intellisense.
+        --     { "folke/snacks.nvim", opts = { input = {}, picker = {}, terminal = {} } },
+        -- },
         config = function () require"archvim/config/opencode" end,
     },
     {
         "linw1995/nvim-mcp",
-        config = function () require"nvim-mcp".setup() end,
+        config = function () require"archvim/config/nvim-mcp" end,
         -- run = "cargo install --path .",
     },
     -- {

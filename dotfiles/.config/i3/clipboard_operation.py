@@ -87,35 +87,35 @@ if __name__ == "__main__":
         print("Unknown operation:", operation)
         sys.exit(1)
 
-    operation = sys.argv[1].lower()
-    # Lazy import to reduce startup time
-    from pynput.keyboard import Key, Controller
-    keyboard = Controller()
-    use_terminal_keys = is_terminal_window()
-
-    if operation == "copy":
-        keyboard.release(Key.cmd_l)
-        if use_terminal_keys:
-            with keyboard.pressed(Key.ctrl, Key.shift):
-                keyboard.tap('c')
-        else:
-            with keyboard.pressed(Key.ctrl):
-                keyboard.tap(Key.insert)
-        keyboard.pressed(Key.cmd_l)
-    elif operation == "cut":
-        keyboard.release(Key.cmd_l)
-        with keyboard.pressed(Key.shift):
-            keyboard.tap(Key.delete)
-        keyboard.pressed(Key.cmd_l)
-    elif operation == "paste":
-        keyboard.release(Key.cmd_l)
-        if use_terminal_keys:
-            with keyboard.pressed(Key.ctrl, Key.shift):
-                keyboard.tap('v')
-        else:
-            with keyboard.pressed(Key.shift):
-                keyboard.tap(Key.insert)
-        keyboard.pressed(Key.cmd_l)
-    else:
-        print("Unknown operation:", operation)
-        sys.exit(1)
+    # operation = sys.argv[1].lower()
+    # # Lazy import to reduce startup time
+    # from pynput.keyboard import Key, Controller
+    # keyboard = Controller()
+    # use_terminal_keys = is_terminal_window()
+    #
+    # if operation == "copy":
+    #     keyboard.release(Key.cmd_l)
+    #     if use_terminal_keys:
+    #         with keyboard.pressed(Key.ctrl, Key.shift):
+    #             keyboard.tap('c')
+    #     else:
+    #         with keyboard.pressed(Key.ctrl):
+    #             keyboard.tap(Key.insert)
+    #     keyboard.pressed(Key.cmd_l)
+    # elif operation == "cut":
+    #     keyboard.release(Key.cmd_l)
+    #     with keyboard.pressed(Key.shift):
+    #         keyboard.tap(Key.delete)
+    #     keyboard.pressed(Key.cmd_l)
+    # elif operation == "paste":
+    #     keyboard.release(Key.cmd_l)
+    #     if use_terminal_keys:
+    #         with keyboard.pressed(Key.ctrl, Key.shift):
+    #             keyboard.tap('v')
+    #     else:
+    #         with keyboard.pressed(Key.shift):
+    #             keyboard.tap(Key.insert)
+    #     keyboard.pressed(Key.cmd_l)
+    # else:
+    #     print("Unknown operation:", operation)
+    #     sys.exit(1)
