@@ -16,12 +16,14 @@ sudo pacman -S nerd-fonts
 sudo pacman -S tmux
 sudo pacman -S yazi lazygit
 sudo pacman -S fish fisher
+sudo pacman -S autojump
 sudo pacman -S dunst
 sudo pacman -S lazygit tig
 sudo pacman -S bat fzf ripgrep
 sudo pacman -S python
 sudo pacman -S nodejs npm
 sudo pacman -S neovim python-pynvim
+sudo pacman -S direnv
 paru -S warpd
 paru -S nitrogen
 paru -S nvimpager

@@ -97,7 +97,8 @@ plugins=(
     archlinux
     # ripgrep
     # zsh-navigation-tools
-)
+    direnv
+ direnv)
 
 znap source zsh-users/zsh-syntax-highlighting
 znap source zsh-users/zsh-autosuggestions

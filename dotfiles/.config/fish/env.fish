@@ -1,10 +1,3 @@
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS="@im=fcitx"
-export GLFW_IM_MODULE=ibus
-# export QT_SCALE_FACTOR=2
-# export GDK_SCALE=2
-
 export TERMINAL=kitty
 export EDITOR=nvim
 export PAGER=nvimpager
