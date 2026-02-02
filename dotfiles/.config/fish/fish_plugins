@@ -1,5 +1,4 @@
 patrickf1/fzf.fish
-vitallium/tokyonight-fish
 pure-fish/pure
 jethrokuan/z
 acomagu/fish-async-prompt
@@ -10,3 +9,4 @@ meaningful-ooo/sponge
 paldepind/projectdo
 mattmc3/magic-enter.fish
 franciscolourenco/done
+jorgebucaran/fisher

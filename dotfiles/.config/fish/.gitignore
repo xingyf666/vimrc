@@ -1,4 +1,5 @@
 functions/_*.fish
+functions/fisher.fish
 completions/
 conf.d/
 fish_variables
