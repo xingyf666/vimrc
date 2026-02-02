@@ -45,7 +45,7 @@ abbr -a m 'projectdo build'
 
 if command -sq opencode
     function opencode
-        set -x SHELL (which bash)
+        set -lx SHELL (which bash)
         command opencode $argv
     end
 end
