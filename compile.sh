@@ -12,7 +12,7 @@ unset ARCHIBATE_COMPUTER
 export ARCHIBATE_COMPUTER
 compress=z
 version_min=0100
-treesitters=(c cpp cuda cmake lua python html javascript css json bash regex markdown diff glsl vim vimdoc)
+treesitters=(c cpp cuda cmake lua python html javascript css json bash fish regex markdown diff glsl vim vimdoc)
 commands=(sudo base64 tar mktemp cat tee rm mkdir test cp mv stat grep echo uname)
 
 cache="$PWD/.build_cache"

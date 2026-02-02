@@ -2,8 +2,8 @@
 # VERSION: 3.0
 SETUVAR --export ABBR_TIPS_PROMPT:\x5cn\U0001f4a1\x20\x5ce\x5b1m\x7b\x7b\x20\x2eabbr\x20\x7d\x7d\x5ce\x5b0m\x20\x3d\x3e\x20\x7b\x7b\x20\x2ecmd\x20\x7d\x7d
 SETUVAR --export ABBR_TIPS_REGEXES:\x28\x5e\x28\x5cw\x2b\x5cs\x2b\x29\x2b\x28\x2d\x7b1\x2c2\x7d\x29\x5cw\x2b\x29\x28\x5cs\x5cS\x2b\x29\x1e\x28\x5e\x28\x5cs\x3f\x28\x5cw\x2d\x3f\x29\x2b\x29\x7b3\x7d\x29\x2e\x2a\x1e\x28\x5e\x28\x5cs\x3f\x28\x5cw\x2d\x3f\x29\x2b\x29\x7b2\x7d\x29\x2e\x2a\x1e\x28\x5e\x28\x5cs\x3f\x28\x5cw\x2d\x3f\x29\x2b\x29\x7b1\x7d\x29\x2e\x2a
-SETUVAR --export FZF_DEFAULT_COMMAND:fd\x20\x2d\x2dtype\x20f
-SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dcolor\x3dbg\x2b\x3a\x23313244\x2cbg\x3a\x231E1E2E\x2cspinner\x3a\x23F5E0DC\x2chl\x3a\x23F38BA8\x20\x2d\x2dcolor\x3dfg\x3a\x23CDD6F4\x2cheader\x3a\x23F38BA8\x2cinfo\x3a\x23CBA6F7\x2cpointer\x3a\x23F5E0DC\x20\x2d\x2dcolor\x3dmarker\x3a\x23B4BEFE\x2cfg\x2b\x3a\x23CDD6F4\x2cprompt\x3a\x23CBA6F7\x2chl\x2b\x3a\x23F38BA8\x20\x2d\x2dcolor\x3dselected\x2dbg\x3a\x2345475A\x20\x2d\x2dcolor\x3dborder\x3a\x236C7086\x2clabel\x3a\x23CDD6F4\x20\x2d\x2dpreview\x3d\x22bat\x20\x2d\x2dcolor\x3dalways\x20\x2d\x2dstyle\x3dauto\x20\x7b\x7d\x22
+SETUVAR FZF_DEFAULT_COMMAND:\x1d
+SETUVAR --export FZF_DEFAULT_OPTS:\x1d
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
 SETUVAR Z_DATA:/home/bate/\x2elocal/share/z/data
@@ -27,27 +27,7 @@ SETUVAR _fisher_plugins:patrickf1/fzf\x2efish\x1evitallium/tokyonight\x2dfish\x1
 SETUVAR _fisher_pure_2D_fish_2F_pure_files:\x7e/\x2econfig/fish/functions/_pure_check_availability\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_check_for_new_release\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_detect_container_by_cgroup_method\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_detect_container_by_pid_method\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_format_time\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_get_prompt_symbol\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_is_inside_container\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_is_single_line_prompt\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_k8s_context\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_k8s_namespace\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_parse_directory\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_parse_git_branch\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_place_iterm2_prompt_mark\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prefix_root_prompt\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_print_prompt\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_print_prompt_rows\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_aws_profile\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_beginning\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_command_duration\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_container\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_current_folder\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_ending\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_exit_status\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_first_line\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_git\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_git_branch\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_git_dirty\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_git_pending_commits\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_git_stash\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_jobs\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_k8s\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_new_line\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_nixdevshell\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_ssh\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_symbol\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_system_time\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_transient\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_vimode\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_prompt_virtualenv\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_set_color\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_set_default\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_string_width\x2efish\x1e\x7e/\x2econfig/fish/functions/_pure_user_at_host\x2efish\x1e\x7e/\x2econfig/fish/functions/fish_mode_prompt\x2efish\x1e\x7e/\x2econfig/fish/functions/fish_prompt\x2efish\x1e\x7e/\x2econfig/fish/functions/fish_title\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/_pure_init\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/pure\x2efish
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR _fisher_vitallium_2F_tokyonight_2D_fish_files:\x7e/\x2econfig/fish/themes/TokyoNight\x20Day\x2etheme\x1e\x7e/\x2econfig/fish/themes/TokyoNight\x20Moon\x2etheme\x1e\x7e/\x2econfig/fish/themes/TokyoNight\x20Night\x2etheme\x1e\x7e/\x2econfig/fish/themes/TokyoNight\x20Storm\x2etheme
-SETUVAR fish_color_autosuggestion:565f89
-SETUVAR fish_color_command:7dcfff
-SETUVAR fish_color_comment:565f89
-SETUVAR fish_color_end:ff9e64
-SETUVAR fish_color_error:f7768e
-SETUVAR fish_color_escape:bb9af7
-SETUVAR fish_color_keyword:bb9af7
-SETUVAR fish_color_normal:c0caf5
-SETUVAR fish_color_operator:9ece6a
-SETUVAR fish_color_option:bb9af7
-SETUVAR fish_color_param:9d7cd8
-SETUVAR fish_color_quote:e0af68
-SETUVAR fish_color_redirection:c0caf5
-SETUVAR fish_color_search_match:\x2d\x2dbackground\x3d283457
-SETUVAR fish_color_selection:\x2d\x2dbackground\x3d283457
-SETUVAR fish_pager_color_completion:c0caf5
-SETUVAR fish_pager_color_description:565f89
-SETUVAR fish_pager_color_prefix:7dcfff
-SETUVAR fish_pager_color_progress:565f89
-SETUVAR fish_pager_color_selected_background:\x2d\x2dbackground\x3d283457
-SETUVAR fish_user_paths:/home/bate/\x2ecargo/bin\x1e/home/bate/\x2elocal/bin
+SETUVAR fish_user_paths:/home/ubuntu/\x2elocal/bin\x1e/home/bate/\x2ecargo/bin\x1e/home/bate/\x2elocal/bin
 SETUVAR pure_begin_prompt_with_current_directory:true
 SETUVAR pure_check_for_new_release:false
 SETUVAR pure_color_at_sign:pure_color_mute
