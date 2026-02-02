@@ -62,7 +62,7 @@ local cmake_component = {
     {
         function()
             local b_target = cmake.get_build_target()
-            if not b_target or b_target == 'all' then
+            if not b_target or not type(b_target) == 'string' or b_target == 'all' then
                 return icons.cmake.Build
             end
             return icons.cmake.Build .. string.format(" [%s]", b_target)

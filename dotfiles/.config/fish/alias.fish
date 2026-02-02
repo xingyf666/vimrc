@@ -1,3 +1,6 @@
+set -q PAGER; or set -l PAGER less
+set -q EDITOR; or set -l EDITOR nvim
+
 abbr -a s 'ls'
 
 abbr -a gs 'git status'
@@ -34,9 +37,29 @@ abbr -a p 'python'
 abbr -a b "$EDITOR"
 abbr -a v "$PAGER"
 
-abbr -a fish-reload-config "source $__fish_config_dir/config.fish"
-abbr -a fish-edit-config "$EDITOR $__fish_config_dir/config.fish"
+abbr -a fishconf "$EDITOR $__fish_config_dir/config.fish && source $__fish_config_dir/config.fish"
 
 abbr -a t 'projectdo test'
 abbr -a r 'projectdo run'
 abbr -a m 'projectdo build'
+
+if command -sq opencode
+    function opencode
+        set -x SHELL (which bash)
+        command opencode $argv
+    end
+end
+
+function tmux_session_picker
+    ~/.config/tmux/scripts/tmux_session_picker.sh
+end
+
+function tmux_pager_view
+    tmux capture-pane -pS - | $PAGER
+end
+
+abbr -a ta 'tmux attach'
+abbr -a tl 'tmux ls'
+abbr -a tu --function tmux_session_picker
+abbr -a tv --function tmux_pager_view
+abbr -a tmuxconf "$EDITOR $fish_tmux_config"
