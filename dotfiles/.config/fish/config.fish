@@ -1,7 +1,7 @@
 if status is-interactive
-
-    fish_add_path ~/.local/bin
-    fish_add_path ~/.cargo/bin
+    if status is-login
+        set -x LANG C.UTF-8
+    end
 
     if command -sq direnv
         direnv hook fish | source
@@ -47,13 +47,5 @@ $(set_color yellow) dP        $(set_color cyan)dP `88888$(set_color blue)P' dP  
 
     source $__fish_config_dir/env.fish
     source $__fish_config_dir/alias.fish
-
-    abbr -a fish-reload-config 'source $__fish_config_dir/config.fish'
-    abbr -a fish-edit-config '$EDITOR $__fish_config_dir/config.fish'
-
-    abbr -a m --function projectdo_build
-    abbr -a r --function projectdo_run
-    abbr -a t --function projectdo_test
-    abbr -a tool --function projectdo_tool
 
 end
