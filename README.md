@@ -490,7 +490,7 @@ $ ls -A dotfiles
 :colorscheme gruvbox
 :colorscheme nord
 :colorscheme tokyonight
-:colorscheme catppuccin-macchiato  " 默认
+:colorscheme catppuccin-frappe  " 默认
 ```
 
 ## 以下为写给小彭老师自己看的

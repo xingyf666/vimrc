@@ -58,7 +58,7 @@ augroup end
 --     print(vim.g_printed)
 -- end
 
-vim.lsp.set_log_level("warn")
+-- vim.lsp.set_log_level("warn")
 
 local default_opts = {
     nerd_fonts = true,
