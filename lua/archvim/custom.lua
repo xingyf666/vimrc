@@ -33,12 +33,15 @@ if vim.g.vscode then
     vim.g.clipboard = vim.g.vscode_clipboard
 end
 
-vim.cmd [[
-" silent! colorscheme zephyr
-" silent! colorscheme nord
-" silent! colorscheme gruvbox
-" silent! colorscheme tokyonight
-silent! colorscheme catppuccin-macchiato
-]]
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function() vim.cmd.colorscheme "catppuccin-macchiato" end
+})
+-- vim.cmd [[
+-- " silent! colorscheme zephyr
+-- " silent! colorscheme nord
+-- " silent! colorscheme gruvbox
+-- " silent! colorscheme tokyonight-storm
+-- silent! colorscheme catppuccin-macchiato
+-- ]]
 
 -- More custom options goes here

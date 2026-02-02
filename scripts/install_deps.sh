@@ -120,6 +120,7 @@ install_pip() {
 
 install_npm() {
     registry=--registry=https://registry.npmmirror.com
+    pcall npm install -g tree-sitter-cli $registry
     pcall npm install -g pyright $registry
 }
 
