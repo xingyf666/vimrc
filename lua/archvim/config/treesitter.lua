@@ -1,6 +1,10 @@
+local ts_list = {}
+if vim.g.archvim_predownload and vim.g.archvim_predownload ~= 0 then
+    ts_list = {"c", "cpp", "cuda", "cmake", "lua", "python", "html", "javascript", "css", "json", "bash", "fish", "regex", "markdown", "diff", "glsl", "vim", "vimdoc"}
+end
 -------------------------------
-require'nvim-treesitter.configs'.setup {
-    -- ensure_installed = {"c", "cpp", "cuda", "cmake", "lua", "python", "html", "javascript", "css", "json", "bash", "regex", "markdown", "diff", "glsl", "vim", "vimdoc"},
+require'nvim-treesitter'.setup {
+    ensure_installed = ts_list,
     sync_install = false,
     highlight = {
         enable = true,

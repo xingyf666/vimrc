@@ -9,13 +9,13 @@ require("mason").setup({
 })
 
 local lsp_list = { "clangd", "pyright", "lua_ls" }
-if os.getenv("ARCHIBATE_COMPUTER") then
+if vim.g.archvim_predownload and vim.g.archvim_predownload ~= 0 then
     lsp_list = { "clangd", "pyright", "lua_ls", "ts_ls", "fish_lsp", "cmake", "rust_analyzer", "arduino_language_server", "jsonls", "bashls", "sqlls" }
 end
 
 require("mason-lspconfig").setup {
     ensure_installed = lsp_list,
-    automatic_installation = false,
+    automatic_installation = vim.g.archvim_predownload and vim.g.archvim_predownload ~= 0,
     automatic_enable = true,
 }
 
