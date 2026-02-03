@@ -37,7 +37,7 @@ order += "volume master"
 # }
 
 memory {
-        format = "<span foreground='#8aadf4'>󰍛</span> <span foreground='#8aadf4'>%percentage_used</span>"
+        format = "<span foreground='#8aadf4'>󰍛</span> <span foreground='#8aadf4'>%used (%percentage_used)</span>"
 }
 
 load {
