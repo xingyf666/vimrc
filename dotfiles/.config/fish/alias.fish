@@ -2,6 +2,7 @@ set -q PAGER; or set -l PAGER less
 set -q EDITOR; or set -l EDITOR nvim
 
 abbr -a s 'ls'
+abbr -a l 'ls -lAtr'
 
 abbr -a gs 'git status'
 abbr -a ga 'git add --all'
@@ -36,6 +37,7 @@ abbr -a g 'git'
 abbr -a p 'python'
 abbr -a b "$EDITOR"
 abbr -a v "$PAGER"
+abbr -a j z
 
 abbr -a fishconf "$EDITOR $__fish_config_dir/config.fish && source $__fish_config_dir/config.fish"
 
