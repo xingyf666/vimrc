@@ -1,5 +1,6 @@
 functions/_*.fish
 functions/fisher.fish
+functions/fish_*.fish
 completions/
 conf.d/
 fish_variables
