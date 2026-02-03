@@ -8,7 +8,7 @@ set -l fzf_preview_opts
 if command -sq bat
     set fzf_preview_opts '--preview="bat --color=always --style=auto {}"'
 end
-set -x FZF_DEFAULT_OPTS $fzf_color_theme$fzf_preview_opts
+set -x FZF_DEFAULT_OPTS $fzf_color_theme' '$fzf_preview_opts
 
 if command -sq fd
     set -x FZF_DEFAULT_COMMAND 'fd --type f'
