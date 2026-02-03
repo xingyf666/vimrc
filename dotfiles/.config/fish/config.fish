@@ -29,6 +29,7 @@ $(set_color yellow) dP        $(set_color cyan)dP `88888$(set_color blue)P' dP  
     end
 
     fish_vi_key_bindings
+    fzf_key_bindings
     if false; fish_default_key_bindings; end
     bind -M insert ctrl-p up-or-search
     bind -M insert ctrl-n down-or-search
