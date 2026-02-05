@@ -112,7 +112,7 @@ install_pip() {
     fi
     index=(-i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple)
 
-    packages=(pynvim openai tiktoken cmake_language_server)
+    packages=(pynvim openai tiktoken cmake_language_server pillow)
     for package in "${packages[@]}"; do
         pcall "$python" -m pip install -U "${index[@]}" $package $break
     done
@@ -142,6 +142,7 @@ install_pacman() {
     sudo pacman -S --noconfirm python-pynvim
     sudo pacman -S --noconfirm python-openai
     sudo pacman -S --noconfirm python-tiktoken
+    sudo pacman -S --noconfirm python-pillow
 }
 
 install_apt() {

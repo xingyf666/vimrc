@@ -63,7 +63,7 @@ augroup end
 local default_opts = {
     nerd_fonts = true,
     disable_notify = true,
-    transparent_color = true,
+    transparent_color = false,
     more_cpp_ftdetect = true,
     enable_signature_help = false,
     enable_inlay_hint = true,

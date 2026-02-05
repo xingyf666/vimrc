@@ -16,8 +16,8 @@ if require'archvim.options'.enable_kitty then
         end
     })
 else
-    require'image'.setup {
-        backend = 'sixel',
-    }
-    require'image'.disable()
+    -- require'image'.setup {
+    --     backend = 'sixel',
+    -- }
+    -- require'image'.disable()
 end
