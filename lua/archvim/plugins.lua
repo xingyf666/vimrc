@@ -183,9 +183,9 @@ local plugins = {
         end,
         config = function() require'archvim/config/treesitter' end,
         requires = {
-            -- 'p00f/nvim-ts-rainbow',
+            'p00f/nvim-ts-rainbow',
             'nvim-treesitter/nvim-treesitter-textobjects',
-            -- 'nvim-treesitter/nvim-treesitter-context',
+            'nvim-treesitter/nvim-treesitter-context',
             'JoosepAlviste/nvim-ts-context-commentstring',
             'windwp/nvim-ts-autotag',
             'andymass/vim-matchup',

@@ -23,7 +23,7 @@ require'nvim-treesitter'.setup {
         enable = true,
     },
     rainbow = {
-        enable = false,
+        enable = true,
         extended_mode = true,
     },
     matchup = {
@@ -32,7 +32,7 @@ require'nvim-treesitter'.setup {
     context_commentstring = {
         enable = true,
     },
-    textobjects = {
+    textobjects = { -- FIXME: broken!
         select = {
             enable = true,
 
