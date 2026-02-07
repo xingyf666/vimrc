@@ -8,6 +8,8 @@ require("mason").setup({
     }
 })
 
+vim.lsp.set_log_level("WARN")
+
 local lsp_list = { "clangd", "pyright", "lua_ls" }
 if vim.g.archvim_predownload and vim.g.archvim_predownload ~= 0 then
     lsp_list = { "clangd", "pyright", "lua_ls", "ts_ls", "fish_lsp", "cmake", "rust_analyzer", "arduino_language_server", "jsonls", "bashls", "sqlls" }
