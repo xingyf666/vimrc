@@ -86,6 +86,7 @@ local default_opts = {
 end)()
 
 vim.opt.clipboard:append { 'unnamed', 'unnamedplus' }
+vim.g.clipboard = 'osc52'
 
 return setmetatable({}, {
     __newindex = function (_, k, v)
