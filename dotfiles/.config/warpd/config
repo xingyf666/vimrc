@@ -18,8 +18,8 @@ hint_bgcolor: #1a1b26
 hint_fgcolor: #9ece6a
 
 accelerator_acceleration: 10000
-acceleration: 1400
-speed: 200
+acceleration: 1000
+speed: 220
 max_speed: 3400
 decelerator_speed: 150
 

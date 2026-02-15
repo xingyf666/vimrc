@@ -4,32 +4,41 @@ sudo pacman -S i3-wm i3status
 sudo pacman -S lxappearance
 sudo pacman -S flameshot
 sudo pacman -S feh
+sudo pacman -S scrot
 sudo pacman -S thunar
 sudo pacman -S kitty wezterm alacritty
 sudo pacman -S adwaita-icon-theme adwaita-cursor
 sudo pacman -S fcitx5 fcitx5-configtool fcitx5-rime
-sudo pacman -S pulseaudio
+sudo pacman -S pipewire
 sudo pacman -S mplayer vlc
 sudo pacman -S playerctl
 sudo pacman -S picom
 sudo pacman -S nerd-fonts
 sudo pacman -S tmux
-sudo pacman -S yazi lazygit
+sudo pacman -S zellij
+sudo pacman -S rofi
+sudo pacman -S zenity
+sudo pacman -S yazi
+sudo pacman -S perl-image-exiftool
+sudo pacman -S exiftool
 sudo pacman -S fish fisher
 sudo pacman -S autojump
 sudo pacman -S dunst
 sudo pacman -S lazygit tig
 sudo pacman -S bat fzf ripgrep
-sudo pacman -S python
+sudo pacman -S fd bat exa
+sudo pacman -S python python-pip uv
 sudo pacman -S nodejs npm
 sudo pacman -S neovim python-pynvim
 sudo pacman -S direnv
 sudo pacman -S atuin
+sudo pacman -S zoxide
 paru -S i3lock-color
 paru -S warpd
 paru -S nitrogen
 paru -S nvimpager
 paru -S projectdo
+paru -S oscclip
 
 # https://github.com/Reverier-Xu/Ori-fcitx5
 paru -S fcitx5-skin-ori-git

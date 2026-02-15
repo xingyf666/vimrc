@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# 获取文件锁，防止并发执行
+exec 9>/tmp/volume_brightness.lock
+flock -n 9 || exit 1
+
 # See https://github.com/Nmoleo64/i3-volume-brightness-indicator/blob/main/README.md for usage instructions
 volume_step=1
 brightness_step=5
