@@ -12,7 +12,7 @@
 curl -SLf https://142857.red/files/nvimrc-install.sh | bash
 ```
 
-如果安装遇到问题，欢迎通过 [GitHub issue](github.com/archibate/vimrc/issues) 反映，我会尽快帮您解决。
+如果安装遇到问题，欢迎通过 [GitHub issue](https://github.com/archibate/vimrc/issues) 反映，我会尽快帮您解决。
 
 * 目前只支持 Linux 和 MacOS 系统，暂不支持 Wendous 系统。
 * 请勿以 root 身份运行！否则会为 root 安装 nvim 插件而不是当前用户，插件安装后仅对当前用户有效。
@@ -73,7 +73,7 @@ curl -SLf https://142857.red/files/nvimrc-install.sh | bash
 
 ### 可搭配我的 Tmux 整合包
 
-本 NeoVim 插件整合包可与 [小彭老师 Tmux 整合包](github.com/archibate/tmux-conf) 无缝互动。
+本 NeoVim 插件整合包可与 [小彭老师 Tmux 整合包](https://github.com/archibate/tmux-conf) 无缝互动。
 
 > 例如 `<C-l>` 原本是在 Vim 的窗口间向左移动一格。检测到 Tmux 后，若左边已没有 Vim 窗口，则会跳出 Vim，在 Tmux 窗口间移动。同理，在 Tmux 窗口中按 `<C-h>` 向右移动（如果 Vim 刚好在右侧）可以回到 Vim 窗口。
 
@@ -310,7 +310,7 @@ curl -SLf https://142857.red/files/nvimrc-install.sh | bash
 - `<M-k>` 当前窗口向上扩张 1 格
 - `<M-l>` 当前窗口向右扩张 1 格
 
-> `<C-hjkl>` 和 `<M-hjkl>` 系列快捷键与 [小彭老师 Tmux 整合包](github.com/archibate/tmux-conf) 无缝适配，当没有 Vim 窗口时，会在 Tmux 窗口之间移动和调整大小
+> `<C-hjkl>` 和 `<M-hjkl>` 系列快捷键与 [小彭老师 Tmux 整合包](https://github.com/archibate/tmux-conf) 无缝适配，当没有 Vim 窗口时，会在 Tmux 窗口之间移动和调整大小
 
 - `<C-S-h>` 将当前窗口向左移动
 - `<C-S-j>` 将当前窗口向下移动
