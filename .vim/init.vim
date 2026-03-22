@@ -384,6 +384,7 @@ tmap <F12> <ESC><F12>
 "nnoremap <silent> <C-k> <C-w>k:q<CR>
 "nnoremap <silent> <C-j> <C-w>j
 inoremap kj <ESC>
+inoremap jk <ESC>
 "inoremap <DEL> <ESC>
 "nnoremap <DEL> <ESC>
 "vnoremap <DEL> <ESC>
@@ -1124,6 +1125,34 @@ hi Normal ctermbg=none
 hi SignColumn ctermbg=none
 hi FloatermNC guifg=gray
 "set termguicolors
+
+nnoremap J 5j
+vnoremap J 5j
+nnoremap K 5k
+vnoremap K 5k
+nnoremap U <C-r>
+vnoremap U <C-r>
+nnoremap gs :%s//
+nnoremap zh <C-w>h
+nnoremap zj <C-w>j
+nnoremap zk <C-w>k
+nnoremap zl <C-w>l
+nnoremap zH <C-w>H
+nnoremap zJ <C-w>J
+nnoremap zK <C-w>K
+nnoremap zL <C-w>L
+nnoremap zv <C-w>v
+nnoremap zs <C-w>s
+nnoremap z= <C-w>=
+nnoremap z- <C-w>-
+nnoremap z+ <C-w>+
+nnoremap zx <C-w>x
+nnoremap zo :only<CR>
+nnoremap zq :bd!<CR>
+
+vnoremap <C-x> d
+nnoremap <C-a> ggVG
+nnoremap <C-z> u
 
 if filereadable(".vim_localrc")
         source .vim_localrc
