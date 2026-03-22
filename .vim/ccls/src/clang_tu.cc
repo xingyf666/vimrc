@@ -13,7 +13,7 @@
 #include <clang/Driver/Tool.h>
 #include <clang/Lex/Lexer.h>
 #include <clang/Lex/PreprocessorOptions.h>
-#include <llvm/Support/Host.h>
+#include <llvm/TargetParser/Host.h>
 #include <llvm/Support/Path.h>
 
 using namespace clang;
